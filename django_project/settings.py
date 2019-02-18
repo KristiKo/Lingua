@@ -25,7 +25,7 @@ SECRET_KEY = '$w26_i(*01^!frn@yfwqq1pci2-x_x6)mqd*+x3l&*6%1vwm7c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.linguainternational.org']
 
 
 # Application definition
@@ -124,12 +124,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/home/hellolingua/lingua_international'
 LOGIN_URL = 'login'
 
 

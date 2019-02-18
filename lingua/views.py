@@ -46,7 +46,7 @@ def contact(request):
             message = form.cleaned_data['message']
             message = message + '. Callback requested from number: ' + phone_number + ' on this day: ' + day + ' at this time: ' + time
             try:
-                send_mail(subject, message, from_email, ['hello@linguainternational.com'], fail_silently=False)
+                send_mail(subject, message, from_email, ['hello@linguainternational.org'], fail_silently=False)
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('thanks')
