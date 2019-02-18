@@ -25,7 +25,7 @@ SECRET_KEY = '$w26_i(*01^!frn@yfwqq1pci2-x_x6)mqd*+x3l&*6%1vwm7c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.linguainternational.org']
+ALLOWED_HOSTS = ['www.linguainternational.org', '127.0.0.1']
 
 
 # Application definition
@@ -130,7 +130,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 
-LOGIN_REDIRECT_URL = '/home/hellolingua/lingua_international'
+LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = 'login'
 
 

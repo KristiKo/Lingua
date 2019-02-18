@@ -1,18 +1,21 @@
 /* Fade in on scroll effect */
-$(document).ready(function() {
-    $(window).scroll( function(){
-      $('.linguaFade').each( function(i){
-          
-          var bottom_of_object = $(this).position().top + $(this).outerHeight();
-          var bottom_of_window = $(window).scrollTop() + $(window).height();
-          
-          if( bottom_of_window > bottom_of_object ){
-              
-              $(this).animate({'opacity':'1'},1500);                  
-          }        
-      });  
-  }); 
-});
+/* $(document).ready(function() {
+  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if (!isMobile) {
+      $(window).scroll( function(){
+        $('.linguaFade').each( function(i){
+            
+            var bottom_of_object = $(this).position().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            if( bottom_of_window > bottom_of_object ){
+                
+                $(this).animate({'opacity':'1'},1200);                  
+            }        
+        });  
+    }); 
+  }
+}); */
 /* Accept privacy agreement to submit form */
 $( document ).ready(function() {
   $('#privacy-btn').hide();

@@ -22,7 +22,7 @@ h1{
 h1, h2, h3, h4{
     color: #273845;
     text-align: center;
-    margin: 2rem;
+    margin: 2rem 0;
 }
 h5{
     margin: 1rem;
@@ -75,9 +75,9 @@ label{
 label, legend{
     color: white;
 }
-.linguaFade{
+/* .linguaFade{
     opacity: 0;
-}
+} */
 .logo{
     border-radius: 50%;
     width: 5rem;
