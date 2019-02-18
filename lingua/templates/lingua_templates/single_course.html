@@ -1,0 +1,53 @@
+{% extends "lingua_templates/header.html" %}
+
+{% block content %}
+{% include "lingua_templates/inc/navbar.html" %}
+
+<div class="coordinates">
+    <div id="lat">{{ course.coordinate_lat }}</div>
+    <div id="long">{{ course.coordinate_long }}</div>
+</div>
+
+<img class="single-image" src="{{ course.image.url }}" alt="">
+<div class="single-programme">
+    <div class="tab" role="tabpanel">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab">Description</a></li>
+            <li role="presentation"><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">Cost</a></li>
+            <li role="presentation"><a href="#Section3" aria-controls="messages" role="tab" data-toggle="tab">More Info</a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content tabs">
+            <div role="tabpanel" class="tab-pane fade in active show" id="Section1">
+                <h3>Description</h3>
+                <p>{{ course.description }}</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="Section2">
+                <h3>Cost</h3>
+                <p>The cost for this course is: </p>
+                <p>£ {{ course.price }}</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="Section3">
+                <h3>More Info</h3>
+                <p>You can find more info about this programme by clicking <a href="{{ course.college_url }}">here</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="search-flex">
+        <div>
+            <h3>Not sure how to apply?</h3>
+            <p>Start by reading here</p>
+            <button class="btn btn-primary">How To Apply</button>
+        </div>
+        <div>
+            <h3>Ready to apply?</h3>
+            <p>Start your application here</p>
+            <button class="btn btn-primary">Apply</button>
+        </div>
+    </div>
+{% include "lingua_templates/testimonials/single_testimonial_course.html" %}
+{% include "lingua_templates/inc/subscribers.html" %}
+{% include "lingua_templates/inc/footer.html" %}
+{% endblock %}

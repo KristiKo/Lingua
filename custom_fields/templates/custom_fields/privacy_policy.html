@@ -1,0 +1,12 @@
+{% extends "lingua_templates/header.html" %}
+{% block content %}
+{% include "lingua_templates/inc/navbar.html" %}
+    {% if fields %}
+        {% for field in fields %}
+        <div class="container privacy">
+            {{ field.content|safe }}
+        </div>
+        {% endfor %}
+    {% endif %}
+{% include "lingua_templates/inc/footer.html" %}
+{% endblock %}

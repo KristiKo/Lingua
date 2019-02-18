@@ -1,0 +1,15 @@
+{% extends "lingua_templates/header.html" %}
+{% block content %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+<section class="color-gradient">
+    <div class="bg bg-light subscribe">
+        <p> Enter your email and receive top tips on how to learn proficient English in 6 months.</p>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.email }}
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    </div>
+</section>
+{% endblock %}

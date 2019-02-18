@@ -1,0 +1,50 @@
+{% load staticfiles %}
+
+<footer id="myFooter">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <h2 class="logo"><a href="#"><img class="logo" src="{% static 'assets/LinguaLogo.jpg' %}"></a></h2>
+            </div>
+            <div class="col-sm-2">
+                <h5>Get started</h5>
+                <ul>
+                    <li class="underline"><a href="#">Home</a></li>
+                    <li class="underline"><a href="{% url 'register' %}">Sign up</a></li>
+                    <li class="underline"><a href="{% url 'login' %}">Sign in</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-2">
+                <h5>Useful Information</h5>
+                <ul>
+                    <li class="underline"><a href="{% url 'how_to_apply' %}">How to apply</a></li>
+                    <li class="underline"><a href="{% url 'search_programme' %}">Search programme</a></li>
+                    <li class="underline"><a href="{% url 'search_course' %}">Search course</a></li>
+                    <li class="underline"><a href="#newsletter">Get useful tips</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-2">
+                <h5>Support</h5>
+                <ul>
+                    <li class="underline"><a href="{% url 'contact' %}">Contact</a></li>
+                    <li class="underline"><a href="{% url 'faqs' %}">FAQs</a></li>
+                    <li class="underline"><a href="{% url 'privacy_policy' %}">Privacy policy</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3">
+                <div class="social-networks underline">
+                    <a href="https://twitter.com/hello_lingua"><i class="fab fa-twitter footer-icon"></i></a>
+                    <a href="#"><i class="fab fa-facebook footer-icon"></i></a>
+                    <a href="#"><i class="fab fa-linkedin footer-icon"></i></a>
+                    <a href="https://www.instagram.com/hello_lingua/"><i class="fab fa-instagram footer-icon"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp footer-icon"></i></a>
+                    <a href="#"><i class="fab fa-telegram footer-icon"></i></a>
+                </div>
+                <a class="btn btn-primary" href="{% url 'contact' %}">Contact us</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <p>© 2019 282 Grange Road, E13 0HB, London </p>
+    </div>
+</footer>

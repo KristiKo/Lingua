@@ -1,0 +1,29 @@
+{% load staticfiles %}
+
+<div class="bg bg-light help linguaFade">
+    <h2>Need some help?</h2>
+    <p> Using the Lingua International service is simple and easy, </br> but you may have some questions before you start.</p>
+    <div class="help-section">
+        <a href="{% url 'how_to_apply' %}">
+            <div><img src="{%static 'assets/how_it_works.png' %}" alt="how it works"></div>
+            <div class="help-center">
+                <i class="fa fa-angle-right"></i>
+                <p>How it works</p>
+            </div>
+        </a>
+        <a href="{% url 'faqs' %}">
+            <div><img src="{%static 'assets/faq.png' %}" alt=""></div>
+            <div class="help-center">
+                <i class="fa fa-angle-right"></i>
+                <p>Frequently asked questions</p>
+            </div>
+        </a>
+        <a href="{% url 'how_to_apply' %}">
+            <div><img src="{%static 'assets/how_to_apply.png' %}" class="special-img" alt=""></div>
+            <div class="help-center" style="margin:1rem;">
+                <i class="fa fa-angle-right"></i>
+                <p>How to apply</p>
+            </div>
+        </a>
+    </div>
+</div>

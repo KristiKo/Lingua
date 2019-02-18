@@ -1,0 +1,32 @@
+{% extends "lingua_templates/header.html" %}
+{% load staticfiles %}
+{% block content %}
+{% include "lingua_templates/inc/navbar.html" %}
+<section id="contact fadeIn">
+  <div class="container">
+    <h1 style="font-weight:normal;">Let's get in <strong>touch</strong><i class="fa fa-phone contact-phone lingua-icon-dark" aria-hidden="true"></i></h1>
+    <div class="contact-flex">
+        <div class="contact-left">
+            <h3 style="color:white;">Want to leave a message or call?</h3>
+            <p style="color:white;">Great! Leave a message below. Or</p>
+            <p style="color:white;">Call: <a style="color:white;" href="tel:+447438546873">+447438546873</a></p>
+            <p style="color:white;">Whatsapp/Telegram: <a style="color:white;" href="tel:+447438546873">+447438546873</a></p>
+            <p style="color:white;">Mail: <a style="color:white;" href="mailto:hello@linguainternational.org">hello@linguainternational.org</a></p>
+        </div>
+        <div class="contact-right">
+            <h3 style="color:white;">Want to request a callback?</h3>
+            <p style="color:white;">Fill the form below with your contact number and preferred day and time and we will call you back...</p>
+        </div>
+    </div>
+    <form class="contact-form" method="post">
+      {% load widget_tweaks %}
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="form-actions">
+        <button type="submit" class="btn btn-info">Get in touch</button>
+      </div>
+    </form>
+  </div>
+</section>
+{% include "lingua_templates/inc/footer.html" %}
+{% endblock %}

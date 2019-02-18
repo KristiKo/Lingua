@@ -1,0 +1,117 @@
+{% extends "lingua_templates/header.html" %}
+{% load staticfiles %}
+{% block content %}
+{% include "lingua_templates/inc/navbar.html" %}
+<section class="text-center my-5">
+  <h1 class="h1-responsive font-weight-bold my-5">How to apply</h1>
+  <div class="row" style="justify-content:space-evenly;">
+    <div class="col-md-3">
+      <i class="fas fa-mobile lingua-icon-dark"></i>
+      <h5 class="font-weight-bold my-4">Easy</h5>
+      <p class="grey-text mb-md-0 mb-5">Great news! It has never been easier to apply to UK Universities.
+      </p>
+    </div>
+    <div class="col-md-3">
+      <i class="fa fa-piggy-bank lingua-icon-dark"></i>
+      <h5 class="font-weight-bold my-4">Cut the cost</h5>
+      <p class="grey-text mb-md-0 mb-5">Register with us and save up to 30% of the total cost of the programme, compared to applying directly to the university.
+      </p>
+    </div>
+    <div class="col-md-3">
+      <i class="fas fa-shield-alt lingua-icon-dark"></i>
+      <h5 class="font-weight-bold my-4">Secure</h5>
+      <p class="grey-text mb-0">We don’t take payments from you. We are 100% free and secure.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Main -->
+<section class="my-5">
+  <div class="row">
+    <div class="col-lg-5 mb-lg-0 mb-5">
+      <img src="https://mdbootstrap.com/img/Photos/Others/images/83.jpg" alt="Sample project image" class="img-fluid rounded z-depth-1">
+    </div>
+    <div class="col-lg-5">
+      <div class="row mb-3">
+        <div class="col-md-1 col-2">
+          <i class="fas fa-search lingua-icon-dark"></i>
+        </div>
+        <div class="col-md-11 col-10">
+          <h4 class="font-weight-bold mb-3"><strong>Search your favourite programme</strong></h4>
+          <p>Browse our catalogue for <a href="{% url 'search_course' %}" target="_blank">courses</a> and <a href="{% url 'search_programme' %}" target="_blank">programmes</a> 
+            in the best UK universities and language schools.</p>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-1 col-2">
+          <i class="fas fa-user-plus lingua-icon-dark"></i>
+        </div>
+        <div class="col-md-11 col-10">
+          <h4 class="font-weight-bold mb-3"><strong>Register to out student dashboard.</strong></h4>
+          <p>Registering is super easy. Once you have found the courses or programme which you like you can register <a href="{% url 'register' %}" target="_blank">here</a></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-1 col-2">
+          <i class="fas fa-user-graduate lingua-icon-dark"></i>
+        </div>
+        <div class="col-md-11 col-10">
+          <h4 class="font-weight-bold mb-3"><strong>Create your student profile</strong></h4>
+          <p>Upload the required documents. University and Language schools require different documents but don’t worry, you can find detailed instruction in your dashboard. 
+            If in doubt, you can <a href="{% url 'contact' %}" target="_blank">contact</a> us anytime.
+            No need to provide everything at once. Update your profile and come back to it when you prefer. Once you are ready, submit your application, sit back and relax.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="my-5">
+  <div class="row">
+    <div class="col-lg-5">
+      <div class="row mb-3">
+        <div class="col-md-1 col-2">
+          <i class="fas fa-cogs lingua-icon-dark"></i>
+        </div>
+        <div class="col-md-11 col-10">
+          <h4 class="font-weight-bold mb-3"><strong>Processing...</strong></h4>
+          <p>We will process your application within 24h. 
+              We will let you know if you’re application was complete or if you need to provide more info.
+          </p>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-1 col-2">
+          <i class="fas fa-passport lingua-icon-dark"></i>
+        </div>
+        <div class="col-md-11 col-10">
+          <h4 class="font-weight-bold mb-3"><strong>Getting Ready</strong></h4>
+          <p>You will receive an online interview invitation. A personal advisor will prepare you to the interview.
+            Now it is also a good time to prepare your bank statement which will be required by the university before the final offer.
+            Pay your fees directly to the university. Remember to do this before the deadline and get a discount through Lingua International.
+            </p>
+        </div>
+      </div>
+      <div class="row mb-lg-0 mb-5">
+        <div class="col-md-1 col-2">
+          <i class="fas fa-rocket lingua-icon-dark"></i>
+        </div>
+        <div class="col-md-11 col-10">
+          <h4 class="font-weight-bold mb-3"><strong>Pack up and start your adventure…</strong></h4>
+          <p>Don't forget to take the most important with you...</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5">
+      <img src="https://mdbootstrap.com/img/Photos/Others/images/82.jpg" alt="Sample project image" class="img-fluid rounded z-depth-1">
+    </div>
+  </div>
+</section>
+
+<!-- {% if fields %}
+    {% for field in fields %}
+        {{ field.content }}
+    {% endfor %}
+{% endif %} -->
+{% include "lingua_templates/inc/footer.html" %}
+{% endblock %}
