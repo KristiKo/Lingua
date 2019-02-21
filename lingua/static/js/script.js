@@ -16,8 +16,29 @@
     }); 
   }
 }); */
-/* Accept privacy agreement to submit form */
+/* Faqs */
+const items = document.querySelectorAll(".accordion a");
+
+function toggleAccordion(){
+  this.classList.toggle('active');
+  this.nextElementSibling.classList.toggle('active');
+}
+
+items.forEach(item => item.addEventListener('click', toggleAccordion));
+
 $( document ).ready(function() {
+
+  /* Dashboard */
+  $(".main-sub-menu").on("click",function(){
+    $(".sub-menu").css({"display":"none"});
+    $('.main-sub-menu').find(".fa-angle-right").css({"transform":"rotate(0deg)"});
+    $(this).find("ul").slideToggle();
+    $(".main-menu .main-sub-menu").removeClass("dashboard-active");
+    $(this).addClass("dashboard-active");
+    $(this).find(".fa-angle-right").css({"transform":"rotate(90deg)"});
+  }); 
+
+  /* Accept privacy agreement to submit form */
   $('#privacy-btn').hide();
   $('#id_agree').change(function(){
     if ( document.getElementById('id_agree').checked == true ){
@@ -29,9 +50,13 @@ $( document ).ready(function() {
   })
 });
 
-/* Maps */
+/* Maps
+* If page does't contain lat long, the script will stop
+* Add check to see if page is correct or move this at the bottom
+*/
 /* Get latitude and longitute values from template */
 var lat = document.getElementById('lat').innerHTML;
+
 var long = document.getElementById('long').innerHTML;
 
 var mymap = L.map('mapid').setView([lat, long], 13);
@@ -56,21 +81,4 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 {icon: greenIcon}) to add after [lat, long] */
 
 var marker = L.marker([lat, long]).addTo(mymap);
-marker.bindPopup("<b>Hello student!</b><br>University adderss.").openPopup();
-
-/* Faqs */
-const items = document.querySelectorAll(".accordion a");
-
-function toggleAccordion(){
-  this.classList.toggle('active');
-  this.nextElementSibling.classList.toggle('active');
-}
-
-items.forEach(item => item.addEventListener('click', toggleAccordion));
-
-/* Profile section */
-$(document).ready(function(){
-  $('[data-toggle="offcanvas"]').click(function(){
-      $("#navigation").toggleClass("hidden-xs");
-  });
-});
+marker.bindPopup("<b>Hello student!</b><br>University address.").openPopup();

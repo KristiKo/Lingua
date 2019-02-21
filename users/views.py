@@ -43,13 +43,14 @@ def profile(request):
     }
 
     return render(request, 'users/profile.html', context)
-
+    
+@login_required
 def notify(request):
-    """ subject = "A new user submitted has registered"
-    from_email = "admin@linguainternational.com"
+    subject = "A new user submitted has registered"
+    from_email = "hello@linguainternational.org"
     message = "A new user registered"
     try:
         send_mail(subject, message, from_email, ['matteo.fusilli90@gmail.com'], fail_silently=False)
     except BadHeaderError:
-        return HttpResponse('Invalid header found.') """
+        return HttpResponse('Invalid header found.')
     return render(request, 'users/form_submitted.html')

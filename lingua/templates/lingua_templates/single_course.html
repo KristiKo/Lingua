@@ -21,7 +21,7 @@
         <div class="tab-content tabs">
             <div role="tabpanel" class="tab-pane fade in active show" id="Section1">
                 <h3>Description</h3>
-                <p>{{ course.description }}</p>
+                <p>{{ course.description|linebreaks }}</p>
             </div>
             <div role="tabpanel" class="tab-pane fade" id="Section2">
                 <h3>Cost</h3>
@@ -48,6 +48,6 @@
         </div>
     </div>
 {% include "lingua_templates/testimonials/single_testimonial_course.html" %}
-{% include "lingua_templates/inc/subscribers.html" %}
+{% include "lingua_templates/inc/lead_magnet.html" %}
 {% include "lingua_templates/inc/footer.html" %}
 {% endblock %}

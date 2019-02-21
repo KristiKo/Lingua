@@ -20,7 +20,7 @@
         <div class="tab-content tabs">
             <div role="tabpanel" class="tab-pane fade in active show" id="Section1">
                 <h3>Description</h3>
-                <p>{{ programme.description }}</p>
+                <p>{{ programme.description|linebreaks }}</p>
             </div>
             <div role="tabpanel" class="tab-pane fade" id="Section2">
                 <h3>Cost</h3>
@@ -50,6 +50,6 @@
             <button class="btn btn-primary">Apply</button>
         </div>
     </div>
-{% include "lingua_templates/inc/subscribers.html" %}
+{% include "lingua_templates/inc/lead_magnet.html" %}
 {% include "lingua_templates/inc/footer.html" %}
 {% endblock %}
