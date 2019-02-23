@@ -9,7 +9,7 @@ html, body{
     padding: 0 !important;
 }
 .fa{
-    color: #00b2ff;
+    color: #3955ff;
 }
 .navbar-links {
     color: #67737c !important;
@@ -766,7 +766,7 @@ legend, label{
 .color-gradient{
     position: absolute;
     width: 100vw;
-    height: 105vh;
+    height: 130vh;
     background-image: linear-gradient(90deg,#00b2ff,#7d2ae8);
 }
 .login-form{
@@ -801,7 +801,6 @@ legend, label{
         padding: 1rem;
     }
 }
-/*Login Signup Page*/
 a:focus,a:hover,a{
     outline:none;
     text-decoration: none;
@@ -897,7 +896,7 @@ li,ul{
 .login-form {
     text-align: center;
 }
-
+.registration-form input,
 .login-form input {
     -moz-border-bottom-colors: none;
     -moz-border-left-colors: none;
@@ -923,8 +922,28 @@ li,ul{
 
 /* Student Dashboard */
 .profile-form{
-    text-align: center;
-    width: 80%;
+    width: 40%;
+}
+.profile-form input {
+    width: 70%;
+    margin: 1rem 2rem;
+}
+.profile-form label {
+    background-color: #4682B4;
+    color: white;
+    padding-left: 2rem;
+}
+.side-information{
+    width: 30%;
+    color: #67737c;
+    background-color: #F0F8FF;
+    padding-top: 4rem;
+}
+.side-information li {
+    font-size: 14px;
+    margin: 2rem 0;
+    padding: 1rem;
+    text-align: justify;
 }
 .rounded-circle{
     width: 7rem;
@@ -933,12 +952,13 @@ li,ul{
     padding: 4rem;
 }
 .privacy-agreement{
-    background-color: lightgrey;
+    background-color: #F0F8FF;
     padding: 1rem;
     margin: 0 auto;
 }
 .privacy-agreement > p {
-    color: white;
+    color: #67737c;
+    font-size: 14px;
 }
 .control-group{
     margin: 2rem;
@@ -966,7 +986,7 @@ li,ul{
 	background-color:#1F3F49;
 	color:#fff;
 	width:30%;
-	height:100vh;
+	height:430vh;
 	position: relative;
 }
 .sidebar .main-menu{
@@ -982,7 +1002,8 @@ li,ul{
 	display: inline-block;
 	padding: 15px 20px;
 	color:#fff;
-	width: 100%;
+    width: 100%;
+    font-size: 16px;
 }
 .sidebar .main-menu li .sub-menu{
 	padding: 0px;
@@ -1004,4 +1025,22 @@ li,ul{
 }
 .dashboard-active{
 	background-color:#00b2ff;
+}
+@media screen and (max-width: 768px) {
+    .side-information {
+        display: none;
+    }
+    .profile-form{
+        width: 80%;
+    }
+    .sidebar .main-menu li a{
+        padding: 15px 5px;
+        font-size: 12px;
+    }
+    .sidebar{
+        width: 35%;
+    }
+    .profile-form label{
+        font-size: 12px;
+    }
 }

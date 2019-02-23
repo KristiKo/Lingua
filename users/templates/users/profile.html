@@ -13,243 +13,134 @@
                     <p class="user-name"> Welcome: {{ user.username }}</p>
                     <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
                 </li>
-                <li class="main-sub-menu"><a href="#"><i class="fas fa-home"></i> Home <i class="fas fa-angle-right"></i></a>
+                <li class="main-sub-menu"><a href="#"><i class="fa fa-user"></i> Personal Info <i class="fas fa-angle-right"></i></a>
                     <ul class="sub-menu">
-                        <li><a href="#p">sub home</a></li>
-                        <li><a href="#"> sub home</a></li>
+                        <li><a href="#"> Full Name</a></li>
+                        <li><a href="#"> Profile picture</a></li>
+                        <li><a href="#"> Email address</a></li>
+                        <li><a href="#"> Phone number</a></li>
+                        <li><a href="#"> Current address</a></li>
                     </ul>
                 </li>
-                <li class="main-sub-menu"><a href="#"><i class="fas fa-images"></i> Gallery <i class="fas fa-angle-right"></i></a>
+                <li class="main-sub-menu"><a href="#"><i class="fa fa-id-card"></i> Passport <i class="fas fa-angle-right"></i></a>
                     <ul class="sub-menu">
-                        <li><a href="#p"> 2017</a></li>
-                        <li class="sub-active"><a href="#"> 2018</a></li>
-                        <li><a href="#"> 2019</a></li>
-                        <li><a href="#"> 2020</a></li>
+                        <li><a href="#" style="color:red;"> Mandatory *</a></li>
+                        <li><a href="#"> First page picture</a></li>
                     </ul>
                 </li>
-                <li class="main-sub-menu"><a href="#"><i class="fas fa-phone"></i> Contact <i class="fas fa-angle-right"></i></a>
+                <li class="main-sub-menu"><a href="#"><i class="fa fa-id-card"></i> Visa <i class="fas fa-angle-right"></i></a>
                     <ul class="sub-menu">
-                        <li><a href="#"> sub Contact</a></li>
-                        <li><a href="#"> sub Contact</a></li>
+                        <li><a href="#"> If applicable * </a></li>
                     </ul>
+                </li>
+                <li class="main-sub-menu"><a href="#"><i class="fa fa-envelope"></i> CAS Letter <i class="fas fa-angle-right"></i></a>
+                    <ul class="sub-menu">
+                        <li><a href="#"> If applicable * </a></li>
+                        <li><a href="#" style="color:red;"> University only * </a></li>
+                    </ul>
+                </li>
+                <li class="main-sub-menu"><a href="#"><i class="fa fa-book"></i> Recent Education <i class="fas fa-angle-right"></i></a>
+                    <ul class="sub-menu">
+                        <li><a href="#" style="color:red;"> University only * </a></li>
+                        <li><a href="#" style="color:red;"> Mandatory * </a></li>
+                    </ul>
+                </li>
+                <li class="main-sub-menu"><a href="#"><i class="fa fa-university"></i> University/College Preference  <i class="fas fa-angle-right"></i></a>
+                    <ul class="sub-menu">
+                        <li><a href="#"> University/College preference</a></li>
+                        <li><a href="#"> 3 preferences</a></li>
+                    </ul>
+                </li>
+                <li class="main-sub-menu"><a href="#"><i class="fa fa-pencil-alt"></i> Programme/Course preference  <i class="fas fa-angle-right"></i></a>
+                    <ul class="sub-menu">
+                        <li><a href="#"> Programme/Course preference</a></li>
+                        <li><a href="#"> 3 preferences</a></li>
+                    </ul>
+                </li>
+                <li class="main-sub-menu"><a href="#"><i class="fa fa-language"></i> English Level  <i class="fas fa-angle-right"></i></a>
+                    <ul class="sub-menu">
+                            <li><a href="" style="color:red;"> University only * </a></li>
+                        <li><a href="">IELTS certificate min 5.5</a></li>
+                    </ul>
+                </li>
+                <li class="main-sub-menu"><a href="#"><i class="fa fa-envelope"></i> Motivation Letter  <i class="fas fa-angle-right"></i></a>
+                    <ul class="sub-menu">
+                        <li><a href="#" style="color:red;"> University only * </a></li>
+                    </ul>
+                </li>
+                <li class="main-sub-menu"><a href="#"><i class="fa fa-list"></i> CV  <i class="fas fa-angle-right"></i></a>
+                    <ul class="sub-menu">
+                        <li><a href="#" style="color:red;"> Mandatory * </a></li>
+                        <li><a href="#"> Your most up to date CV</a></li>
+                    </ul>
+                </li>
+                <li class="main-sub-menu"><a href="#"><i class="fa fa-envelope"></i> Recommendations  <i class="fas fa-angle-right"></i></a>
+                    <ul class="sub-menu">
+                        <li><a href="#" style="color:red;"> University only * </a></li>
+                        <li><a href="#"> Up to 3, recommended 2</a></li>
+                    </ul>
+                </li>
+                <li class="main-sub-menu"><a href="{% url 'contact' %}"><i class="fa fa-phone"></i> Contact </a>
                 </li>
             </ul>
         </div>
-            <form  class="profile-form" method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                <legend class="border-bottom mb-4">Profile Info</legend>
-                <fieldset class="form-group">
-                    {{ u_form|crispy }}
-                    {{ p_form|crispy }}
-                    <div class="privacy-agreement">
-                        <p>By clicking "I agree", I confirm I have read the <a href="#">Data Use Policy</a> and agree to our Terms and conditions.</p>
-                    </div>
-                </fieldset>
-                <div class="form-group">
-                    <button class="btn btn-outline-info" type="submit">Update</button>
+        <form  class="profile-form" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <legend class="border-bottom mb-4" style="padding:1rem;text-align:center;">Profile Info</legend>
+            <fieldset class="form-group">
+                {{ u_form|crispy }}
+                {{ p_form|crispy }}
+                <div class="privacy-agreement">
+                    <p>By clicking "I agree", I confirm I have read the <a href="#">Data Use Policy</a> and agree to our Terms and conditions.</p>
                 </div>
-                <a id="privacy-btn" class="btn btn-primary" href="{% url 'notify' %}">Submit</a>
-            </form>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Update</button>
+            </div>
+            <a id="privacy-btn" class="btn btn-primary" href="{% url 'notify' %}">Submit</a>
+        </form>
+        <div class="side-information">
+            <ul>
+                <li>This is the username you registered with.
+                    Please upload a picture where your face is clearly visible.
+                </li>
+                <li>A front page picture of your password is mandatory if you are applying for a university programme
+                    or a language course. This can be  jpeg, pdf or even a picture takes with your phone, as long as it's readable.
+                </li>
+                <li>If you never had a Visa, don't worry. You don't need to upload it for now.
+                    If you had any previous UK visas, please upload them here (it can be a visitor visa, student visa or any other type of UK visa).</li>
+                <li>If you previously studied in the UK before, you need to have a CAS letter.
+                    A CAS letter, or 'Confirmation of Acceptance for Studies', is required as part of the visa extension/application process.
+                    If you get a CAS letter, always keep it safe. You will need it in the future.</li>
+                <li>Only for University applicants *
+                    Please upload connected and compressed file of your most recent education.
+                    Please note the order should be Certificate – Transcript of Records – English Translation.</li>
+                <li>Write here your University preference if you are applying for a University programme
+                    or college preference if you are applying for a language course. We recommend writing up to 3 preferences.
+                </li>
+                <li>We recommend writing up to 3 preferences if you are applying for a university programme or a language course.</li>
+                <li>Please upload your IELTS Academic Certificate here.
+                    The IELTS Academic test is suitable for entry to study at undergraduate or postgraduate levels, and also for professional registration purposes. It assesses whether you are ready to begin studying or training in an environment where English language is used and reflects some of the features of language used in academic study.      
+                    You can find more info on IELTS <a href="https://www.ielts.org/what-is-ielts/ielts-for-study" target="_blank">here</a>
+                    Please note, that overall score lower than 5.5 is not accepted, with a minimum of 5.0 in each band.</li>
+                <li>It’s your chance to describe your ambitions, suitability for the course, motivation, skills, and experience to university and college admissions staff.
+                    In order to write a good personal statement, what you need to do is simply answer the below mentioned questions:
+                    Why you are applying for this particular course?
+                    What do you hope to achieve through studying this course?
+                    How your past / current studies / experience supports your application?
+                    How this course is relevant to your future career / academic goals?
+                    If you are applying for a course that requires work experience, you should show how you meet this requirement
+                    Any additional information that you think is relevant to your application
+                    Still have problem with it? Give us your email and we will send you a sample and step by step instructions on how to write a good personal statement.</li>
+                <li>Your most up to date CV
+                    You can find more examples on how to write CVs and templates <a href="#" target="_blank">here</a></li>
+                <li>If you want to study Undergraduate course, we need 2 academic references (teachers or professors).
+                    If your are applying for a master’s degree, MBA or PhD, we will need one academic reference and one reference from your employer.   
+                    Please note, that on the reference, should be below mentioned referee details.</li>
+            </ul>
+        </div>
     </div>
 </section>
-
-
-
-<!-- <div class="container-fluid display-table">
-    <div class="row display-table-row">
-        <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
-            <div class="logo">
-            </div>
-            <div class="navi">
-                <ul>
-                    <li data-toggle="modal" data-target="#user-info" class="active"><a href="#"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">User Info</span></a></li>
-                    <li data-toggle="modal" data-target="#passport" class="active"><a href="#"><i class="fa fa-id-card" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Passport</span></a></li>
-                    <li data-toggle="modal" data-target="#visa"><a href="#"><i class="fa fa-id-card" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Visa</span></a></li>
-                    <li data-toggle="modal" data-target="#cas"><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i><span class="hidden-xs hidden-sm">CAS Letter</span></a></li>
-                    <li data-toggle="modal" data-target="#recent-education"><a href="#"><i class="fa fa-pencil" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Recent Education</span></a></li>
-                    <li data-toggle="modal" data-target="#preference"><a href="#"><i class="fa fa-pencil" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Preference</span></a></li>
-                    <li data-toggle="modal" data-target="#language"><a href="#"><i class="fa fa-language" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Language</span></a></li>
-                    <li data-toggle="modal" data-target="#motivation"><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Motivation Letter</span></a></li>
-                    <li data-toggle="modal" data-target="#cv"><a href="#"><i class="fa fa-list" aria-hidden="true"></i><span class="hidden-xs hidden-sm">CV</span></a></li>
-                    <li data-toggle="modal" data-target="#recommendations"><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Recommendation Letters</span></a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-10 col-sm-11 display-table-cell v-align">
-            <div class="profile-section">
-                    <div class="media">
-                      <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
-                      <div class="media-body">
-                        <h2 class="account-heading">{{ user.username }}</h2>
-                        <p class="text-secondary">{{ user.email }}</p>
-                      </div>
-                    </div>
-                    <form  class="profile-form" method="POST" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        <fieldset class="form-group">
-                            <legend class="border-bottom mb-4">Profile Info</legend>
-                            {{ u_form|crispy }}
-                            {{ p_form|crispy }}
-                            <div class="privacy-agreement">
-                                <p>By clicking "I agree", I confirm I have read the <a href="#">Data Use Policy</a> and agree to our Terms and conditions.</p>
-                            </div>
-                        </fieldset>
-                        <div class="form-group">
-                            <button class="btn btn-outline-info" type="submit">Update</button>
-                        </div>
-                        <a id="privacy-btn" class="btn btn-primary" href="{% url 'notify' %}">Submit</a>
-                    </form>
-                  </div> 
-                </div> 
-            </div> 
-        </div> 
-
-<div id="user-info" class="modal fade" role="dialog">
-<div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-header login-header">
-            <button type="button" class="close" data-dismiss="modal">×</button>
-            <h4 class="modal-title">User Information</h4>
-            <p style="padding:3rem;">You can start by general info. Username, email address and a profile picture to help the process.</p>
-        </div>
-    </div>
-</div>
-</div>
-<div id="passport" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header login-header">
-                <button type="button" class="close" data-dismiss="modal">×</button>
-                <h4 class="modal-title">Passport</h4>
-                <p style="padding:3rem;">Whether you are applying for a language school or University, a copy of your passport is necessary.</p>
-                <p>This must be a picture of the first page of your passport. You can take a picture with your phone or upload a file from your laptop. </p>
-                <p>It just needs to be visible.</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="visa" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header login-header">
-                <button type="button" class="close" data-dismiss="modal">×</button>
-                <h4 class="modal-title">Visa</h4>
-                <p style="padding:3rem;">If you never had a Visa, don't worry. You don't need to upload it for now.</p>
-                <p>If you had any previous UK visas, please upload them here (it can be a visitor visa, student visa or any other type of UK visa).</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="cas" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header login-header">
-                <button type="button" class="close" data-dismiss="modal">×</button>
-                <h4 class="modal-title">CAS Letter</h4>
-                <p style="padding:3rem;">If you previously studied in the UK before, you need to have a CAS letter. </p>
-                <p>A CAS letter, or 'Confirmation of Acceptance for Studies', is required as part of the visa extension/application process.</p>
-                <p>If you get a CAS letter, always keep it safe. You will need it in the future.</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="preference" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header login-header">
-                <button type="button" class="close" data-dismiss="modal">×</button>
-                <h4 class="modal-title">Preference</h4>
-                <p style="padding:3rem;">This applies whether you are applying for a university programme or language school.</p>
-                <p>Write down as many universities/schools preferences as you wish</p>
-                <p>Write down as many programmes/courses preferences as you wish</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="language" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header login-header">
-                <button type="button" class="close" data-dismiss="modal">×</button>
-                <h4 class="modal-title">Language</h4>
-                <p style="color:red;">Only for University applicants*</p>
-                <p style="padding:3rem;">Please upload your IELTS Academic Certificate here.</p>
-                <p>The IELTS Academic test is suitable for entry to study at undergraduate or postgraduate levels, and also for professional registration purposes. It assesses whether you are ready to begin studying or training in an environment where English language is used and reflects some of the features of language used in academic study.</p>        
-                <p>You can find more info on IELTS <a href="https://www.ielts.org/what-is-ielts/ielts-for-study" target="_blank">here</a></p>
-                <p>Please note, that overall score lower than 5.5 is not accepted, with a minimum of 5.0 in each band.</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="recent-education" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header login-header">
-                <button type="button" class="close" data-dismiss="modal">×</button>
-                <h4 class="modal-title">Recent Education</h4>
-                <p style="color:red;">Only for University applicants*</p>
-                <p style="padding:3rem;"> Please upload connected and compressed file of your most recent education.</p>
-                <p>Please note the order should be Certificate – Transcript of Records – English Translation.</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="motivation" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header login-header">
-                <button type="button" class="close" data-dismiss="modal">×</button>
-                <h4 class="modal-title">Motivation Letter</h4>
-                <p style="padding:3rem;">Personal Statement</p>
-                    <p>It’s your chance to describe your ambitions, suitability for the course, motivation, skills, and experience to university and college admissions staff.
-                    In order to write a good personal statement, what you need to do is simply answer the below mentioned questions:</p>
-                        <ul>
-                            <li>Why you are applying for this particular course?</li>
-                            <li>What do you hope to achieve through studying this course?</li>
-                            <li>How your past / current studies / experience supports your application?</li>
-                            <li>How this course is relevant to your future career / academic goals?</li>
-                            <li>If you are applying for a course that requires work experience, you should show how you meet this requirement</li>
-                            <li>Any additional information that you think is relevant to your application</li>
-                            <li>Still have problem with it? Give us your email and we will send you a sample and step by step instructions on how to write a good personal statement.</li>
-                            <li></li>
-                        </ul>
-                        <p>Once you submit the application, your personal advisor will check, proofread and if it is required rewrite your personal statement in order to increase your chances of admission.</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="cv" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header login-header">
-                <button type="button" class="close" data-dismiss="modal">×</button>
-                <h4 class="modal-title">CV</h4>
-                <p style="padding:3rem;">Your most up to date CV</p>
-                <p>You can find more examples on how to write CVs and templates <a href="#" target="_blank">here</a></p>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="recommendations" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header login-header">
-                <button type="button" class="close" data-dismiss="modal">×</button>
-                <h4 class="modal-title">Recommendation Letters</h4>
-                <p style="padding:3rem;">If you want to study Undergraduate course, we need 2 academic references (teachers or professors).</p>
-                <p>If your are applying for a master’s degree, MBA or PhD, we will need one academic reference and one reference from your employer.</p>       
-                <p>Please note, that on the reference, should be below mentioned referee details:</p>
-                <ul>
-                    <li> - Title</li>
-                    <li> - Full name</li>
-                    <li> - Position</li>
-                    <li> - Telephone number</li>
-                    <li> - Email address</li>
-                    <li> - Institution name and address</li>
-                </ul>
-            </div>
-        </div>
-    </div> -->
 </div>
 {% include "lingua_templates/inc/footer.html" %}
 {% endblock content %}
