@@ -9,6 +9,7 @@
 <form id="search-form-course" method="get">
   <div class="well">
     <h1>Find a course:</h1>
+    <h1 style="color:grey;">{{ filter.qs.count }}</h1>
     <div class="row">
       <div class="form-group col-sm-4 col-md-3">
         <p>By College</p>
@@ -37,7 +38,7 @@
         <div class="row-results">
           <img class="img-result" src="{{ course.image.url }}" alt="{{ course.image }}">
           <h4 class="card-name">{{ course.name }}</h4>
-          <p class="card-price" style="padding:2rem;">£ {{ course.price }}</p>
+          <p class="card-price" style="padding:2rem;">£ {{ course.cost }}</p>
         </div>
         <div class="row-results">
           <h6 class="card-university">{{ course.university }}</h6>

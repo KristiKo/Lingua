@@ -7,7 +7,10 @@
     <div id="long">{{ programme.coordinate_long }}</div>
 </div>
 
-<img class="single-image" src="{{ programme.image.url }}" alt="">
+<div class="single-hero">
+    <img class="single-image" src="{{ programme.image.url }}" alt="">
+</div>
+
 <div class="single-programme">
     <div class="tab" role="tabpanel">
         <!-- Nav tabs -->
@@ -25,7 +28,7 @@
             <div role="tabpanel" class="tab-pane fade" id="Section2">
                 <h3>Cost</h3>
                 <p>The cost for this course is: </p>
-                <p>£ {{ programme.price }}</p>
+                <p>£ {{ programme.cost }}</p>
             </div>
             <div role="tabpanel" class="tab-pane fade" id="Section3">
                 <h3>More Info</h3>

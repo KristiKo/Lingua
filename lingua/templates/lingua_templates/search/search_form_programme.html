@@ -9,6 +9,7 @@
 <form id="search-form-programme" method="get">
   <div class="well">
     <h1>Find a programme:</h1>
+    <h1 style="color:grey;">{{ filter.qs.count }}</h1>
     <div class="row">
       <div class="form-group col-sm-4 col-md-3">
         <p>By university</p>
@@ -44,7 +45,7 @@
         <div class="row-results">
           <img class="img-result" src="{{ programme.image.url }}" alt="{{ programme.image }}">
           <h4 class="card-name">{{ programme.name }}</h4>
-          <p class="card-price" style="padding:2rem;">£ {{ programme.price }}</p>
+          <p class="card-price" style="padding:2rem;">£ {{ programme.cost }}</p>
         </div>
         <div class="row-results">
           <h6 class="card-university">{{ programme.university }}</h6>
