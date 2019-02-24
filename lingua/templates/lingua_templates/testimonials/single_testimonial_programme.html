@@ -3,20 +3,22 @@
         <h2>What our students think about it</h2>
         <div class="testimonials">
             {% if programme %}
-                {% for testimonial in programme.programmes.all %}
-                    <figure class="snip1139">
-                        <blockquote>{{ testimonial.comment }}
-                            <div class="arrow"></div>
-                        </blockquote>
-                        <img src="{{ testimonial.picture.url }}" alt="testimonial" />
-                        <div class="author">
-                            <h5>{{ testimonial.name }} <span>- {{ testimonial.rating }} / 5</span></h5>
-                        </div>
-                    </figure>
-                {% endfor %}
+                {% if testimonial %}
+                    {% for testimonial in programme.programmes.all %}
+                        <figure class="snip1139">
+                            <blockquote>{{ testimonial.comment }}
+                                <div class="arrow"></div>
+                            </blockquote>
+                            <img src="{{ testimonial.picture.url }}" alt="testimonial" />
+                            <div class="author">
+                                <h5>{{ testimonial.name }} <span>- {{ testimonial.rating }} / 5</span></h5>
+                            </div>
+                        </figure>
+                    {% endfor %}
                 {% else %}
-                    <p>There are no testimonials for this programme yet...</p>
+                    <h6 style="margin:0 auto;">There are no testimonials for this programme yet...</h6>
                 {% endif %}
+            {% endif %}
         </div>
     </div>
 </div>

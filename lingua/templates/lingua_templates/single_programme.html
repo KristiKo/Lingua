@@ -7,9 +7,8 @@
     <div id="long">{{ programme.coordinate_long }}</div>
 </div>
 
-<div class="single-hero">
-    <img class="single-image" src="{{ programme.image.url }}" alt="">
-</div>
+<img class="single-image" src="{{ programme.image.url }}" alt="">
+<h1>{{ programme.name }}</h1>
 
 <div class="single-programme">
     <div class="tab" role="tabpanel">
@@ -23,6 +22,11 @@
         <div class="tab-content tabs">
             <div role="tabpanel" class="tab-pane fade in active show" id="Section1">
                 <h3>Description</h3>
+                <div class="row">
+                    <p class="icons"><i class="fas fa-graduation-cap lingua-icon-dark-small"></i>Award: {{ programme.award }}</p>
+                    <p class="icons"><i class="fas fa-book lingua-icon-dark-small"></i>Level: {{ programme.level }}</p>
+                    <p class="icons"><i class="far fa-clock lingua-icon-dark-small"></i>Duration: {{ programme.duration }} years</p>
+                </div>
                 <p>{{ programme.description|linebreaks }}</p>
             </div>
             <div role="tabpanel" class="tab-pane fade" id="Section2">
@@ -53,6 +57,10 @@
             <button class="btn btn-primary">Apply</button>
         </div>
     </div>
-{% include "lingua_templates/inc/lead_magnet.html" %}
+<div style="background-color: #f8f9fa !important;" class="bg bg-light apply cta linguaFade">
+    <h1>Any questions?</h1>
+    <p> We are always available and happy to help you</p>
+    <a href="{% url 'contact' %}" class="btn btn-primary">Book a free consultation</a>
+</div>
 {% include "lingua_templates/inc/footer.html" %}
 {% endblock %}

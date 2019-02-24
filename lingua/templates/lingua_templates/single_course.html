@@ -9,6 +9,7 @@
 </div>
 
 <img class="single-image" src="{{ course.image.url }}" alt="">
+<h1>{{ course.name }}</h1>
 <div class="single-programme">
     <div class="tab" role="tabpanel">
         <!-- Nav tabs -->
@@ -35,6 +36,9 @@
         </div>
     </div>
 </div>
+
+<div id="mapid"></div>
+
 <div class="search-flex">
         <div>
             <h3>Not sure how to apply?</h3>
@@ -48,6 +52,22 @@
         </div>
     </div>
 {% include "lingua_templates/testimonials/single_testimonial_course.html" %}
-{% include "lingua_templates/inc/lead_magnet.html" %}
+<div class="search-flex">
+        <div>
+            <h3>Not sure how to apply?</h3>
+            <p>Start by reading here</p>
+            <button class="btn btn-primary">How To Apply</button>
+        </div>
+        <div>
+            <h3>Ready to apply?</h3>
+            <p>Start your application here</p>
+            <button class="btn btn-primary">Apply</button>
+        </div>
+</div>
+<div style="background-color: #f8f9fa !important;" class="bg bg-light apply cta linguaFade">
+    <h1>Any questions?</h1>
+    <p> We are always available and happy to help you</p>
+    <a href="{% url 'contact' %}" class="btn btn-primary">Book a free consultation</a>
+</div>
 {% include "lingua_templates/inc/footer.html" %}
 {% endblock %}

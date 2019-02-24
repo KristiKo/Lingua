@@ -48,6 +48,11 @@
           <p class="card-price" style="padding:2rem;">£ {{ programme.cost }}</p>
         </div>
         <div class="row-results">
+            <p><i class="fas fa-graduation-cap"></i>Award: {{ programme.award }}</p>
+            <p><i class="fas fa-book"></i>Level: {{ programme.level }}</p>
+            <p><i class="far fa-clock"></i>Duration: {{ programme.duration }} years</p>
+        </div>
+        <div class="row-results">
           <h6 class="card-university">{{ programme.university }}</h6>
           <p class="card-date">{{ programme.start_date }}</p>
         </div>
