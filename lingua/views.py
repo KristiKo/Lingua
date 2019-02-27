@@ -21,14 +21,18 @@ def search_course(request):
     return render(request, 'lingua_templates/search/search_form_course.html', {'filter': course_filter})
 
 def subscribe(request):
+    score = 0
     if request.method == 'GET':
         form = SubscriberForm()
     else:
         form = SubscriberForm(request.POST)
         if form.is_valid():
             email = form.cleaned_data['email']
+            question = form.cleaned_data['question']
+            if question == 'teeth':
+                score = 100
             form.save()
-            messages.success(request, f'Your have successfully subscribed to our weekly newsletter')
+            messages.success(request, f'Your have successfully subscribed to our weekly newsletter. Your score is: ' + str(score))
             return redirect('index')
     return render(request, "lingua_templates/subscribe.html", {'form':form}) 
 

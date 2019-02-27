@@ -42,7 +42,9 @@ class ContactForm(forms.Form):
 class SubscriberForm(forms.ModelForm):
     email = forms.EmailField(required=False, label="Email Address",
             widget=forms.TextInput(attrs={'placeholder': 'Email Address'}))
-
+    question = forms.CharField(required=False, label="Plural of tooth",
+            widget=forms.TextInput(attrs={'placeholder': 'answer here'}))
+    
     class Meta:
         model = Subscriber
         fields = ['email']

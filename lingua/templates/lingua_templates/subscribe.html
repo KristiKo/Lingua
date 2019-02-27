@@ -8,6 +8,8 @@
         <form method="post">
             {% csrf_token %}
             {{ form.email }}
+            <h3>What is the plural of tooth?</h3>
+            {{ form.question }}
             <button class="btn btn-primary" type="submit">Submit</button>
         </form>
     </div>
