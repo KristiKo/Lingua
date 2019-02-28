@@ -38,10 +38,15 @@
         <div class="row-results">
           <img class="img-result" src="{{ course.image.url }}" alt="{{ course.image }}">
           <h4 class="card-name">{{ course.name }}</h4>
-          <p class="card-price" style="padding:2rem;">£ {{ course.cost }}</p>
+          <div>
+            {% if course.discount_cost1 %}
+              <p class="card-price discount-cost" style="padding:2rem 0 0 0;"> From £ {{ course.discount_cost1 }}</p>
+            {% endif %}
+            <p class="card-price original-cost">From £ {{ course.original_cost1 }}</p>
+          </div>
         </div>
         <div class="row-results">
-          <h6 class="card-university">{{ course.university }}</h6>
+          <h6 class="card-university">{{ course.college }}, {{course.college.city}}</h6>
           <p class="card-date">{{ course.start_date }}</p>
         </div>
       </div>

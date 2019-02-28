@@ -204,6 +204,14 @@ ul > li {
     text-decoration: none;
     color: #273845;
 }
+.original-cost{
+    text-decoration: line-through;
+}
+.discount-cost{
+    color: black;
+    font-weight: bold;
+    font-size: 22px;
+}
 @media screen and (max-width: 900px) {
     .search-flex {
         display: block;

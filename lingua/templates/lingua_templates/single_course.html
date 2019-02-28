@@ -12,62 +12,100 @@
 <h1>{{ course.name }}</h1>
 <div class="single-programme">
     <div class="tab" role="tabpanel">
-        <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab">Description</a></li>
-            <li role="presentation"><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">Cost</a></li>
+            <li role="presentation"><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">Options & Costs</a></li>
             <li role="presentation"><a href="#Section3" aria-controls="messages" role="tab" data-toggle="tab">More Info</a></li>
         </ul>
-        <!-- Tab panes -->
         <div class="tab-content tabs">
             <div role="tabpanel" class="tab-pane fade in active show" id="Section1">
                 <h3>Description</h3>
+                <div class="row">
+                    <p><i class="fas fa-birthday-cake lingua-icon-dark-small"></i>You should be at least {{ course.min_age }} years old</p>
+                    <p><i class="fas fa-users lingua-icon-dark-small"></i>{{ course.student_per_class }} students per class</p>
+                    <p><i class="far fa-clock lingua-icon-dark-small"></i>Lesson {{ course.lesson_durations }} minutes</p>
+                </div>
                 <p>{{ course.description|linebreaks }}</p>
             </div>
             <div role="tabpanel" class="tab-pane fade" id="Section2">
-                <h3>Cost</h3>
-                <p>The cost for this course is: </p>
-                <p>£ {{ course.cost }}</p>
+                <h3>Options & Costs</h3>
+                <div class="row">
+                    <div class="m-5">
+                        <p class="discount-cost">£ {{ course.discount_cost1 }}</p>
+                        <p class="original-cost">£ {{ course.original_cost1 }}</p>
+                        <p>{{ course.option1 }}</p>
+                    </div>
+                    {% if course.option2 %}
+                    <div class="m-5">
+                        <p class="discount-cost">£ {{ course.discount_cost2 }}</p>
+                        <p class="original-cost">£ {{ course.original_cost2 }}</p>
+                        <p>{{ course.option2 }}</p>
+                    </div>
+                    {% endif %}
+                    {% if course.option3 %}
+                    <div class="m-5">
+                        <p class="discount-cost">£ {{ course.discount_cost3 }}</p>
+                        <p class="original-cost">£ {{ course.original_cost3 }}</p>
+                        <p>{{ course.option3 }}</p>
+                    </div>
+                    {% endif %}
+                    {% if course.option4 %}
+                    <div class="m-5">
+                        <p class="discount-cost">£ {{ course.discount_cost4 }}</p>
+                        <p class="original-cost">£ {{ course.original_cost4 }}</p>
+                        <p>{{ course.option4 }}</p>
+                    </div>
+                    {% endif %}
+                    {% if course.option5 %}
+                    <div class="m-5">
+                        <p class="discount-cost">£ {{ course.discount_cost5 }}</p>
+                        <p class="original-cost">£ {{ course.original_cost5 }}</p>
+                        <p>{{ course.option5 }}</p>
+                    </div>
+                    {% endif %}
+                </div>
             </div>
             <div role="tabpanel" class="tab-pane fade" id="Section3">
                 <h3>More Info</h3>
-                <p>You can find more info about this programme by clicking <a href="{{ course.college_url }}">here</a></p>
+                <p>You can find more info about this programme <a href="{{ course.college_url }}">here</a></p>
             </div>
         </div>
     </div>
 </div>
 
+{% if course.housing %}
+<div class="single-programme">
+    <h4>Housing</h4>
+    <div class="row">
+        <p><i class="fas fa-birthday-cake lingua-icon-dark-small"></i>You should be at least {{ course.min_age }} years old</p>
+        <p><i class="fas fa-map-marked-alt lingua-icon-dark-small"></i>~ {{ course.distance }} minutes to school by public transport</p>
+        <p><i class="fas fa-utensils lingua-icon-dark-small"></i>{{ course.meals }}</p>
+    </div>
+    <p>{{ course.housing_description|linebreaks }}</p>
+</div>
+{% endif %}
+
 <div id="mapid"></div>
 
-<div class="search-flex">
-        <div>
-            <h3>Not sure how to apply?</h3>
-            <p>Start by reading here</p>
-            <button class="btn btn-primary">How To Apply</button>
-        </div>
-        <div>
-            <h3>Ready to apply?</h3>
-            <p>Start your application here</p>
-            <button class="btn btn-primary">Apply</button>
-        </div>
-    </div>
 {% include "lingua_templates/testimonials/single_testimonial_course.html" %}
+
 <div class="search-flex">
-        <div>
-            <h3>Not sure how to apply?</h3>
-            <p>Start by reading here</p>
-            <button class="btn btn-primary">How To Apply</button>
-        </div>
-        <div>
-            <h3>Ready to apply?</h3>
-            <p>Start your application here</p>
-            <button class="btn btn-primary">Apply</button>
-        </div>
+    <div>
+        <h3>Not sure how to apply?</h3>
+        <p>Start by reading here</p>
+        <button class="btn btn-primary">How To Apply</button>
+    </div>
+    <div>
+        <h3>Ready to apply?</h3>
+        <p>Start your application here</p>
+        <button class="btn btn-primary">Apply</button>
+    </div>
 </div>
+
 <div style="background-color: #f8f9fa !important;" class="bg bg-light apply cta linguaFade">
     <h1>Any questions?</h1>
     <p> We are always available and happy to help you</p>
-    <a href="{% url 'contact' %}" class="btn btn-primary">Book a free consultation</a>
+    <a href="{% url 'contact' %}" class="btn btn-primary">Get in touch</a>
 </div>
 {% include "lingua_templates/inc/footer.html" %}
 {% endblock %}

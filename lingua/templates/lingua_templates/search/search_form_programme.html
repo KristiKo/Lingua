@@ -45,15 +45,20 @@
         <div class="row-results">
           <img class="img-result" src="{{ programme.image.url }}" alt="{{ programme.image }}">
           <h4 class="card-name">{{ programme.name }}</h4>
-          <p class="card-price" style="padding:2rem;">£ {{ programme.cost }}</p>
+          <div>
+            {% if programme.discount_cost %}
+              <p class="card-price discount-cost" style="padding:2rem 0 0 0;">£ {{ programme.discount_cost }}</p>
+            {% endif %}
+            <p class="card-price original-cost">£ {{ programme.original_cost }}</p>
+          </div>
         </div>
         <div class="row-results">
-            <p><i class="fas fa-graduation-cap"></i>Award: {{ programme.award }}</p>
-            <p><i class="fas fa-book"></i>Level: {{ programme.level }}</p>
-            <p><i class="far fa-clock"></i>Duration: {{ programme.duration }} years</p>
+            <p><i class="fas fa-graduation-cap lingua-icon-dark-small"></i>Award: {{ programme.award }}</p>
+            <p><i class="fas fa-book lingua-icon-dark-small"></i>Level: {{ programme.level }}</p>
+            <p><i class="far fa-clock lingua-icon-dark-small"></i>Duration: {{ programme.duration }} years</p>
         </div>
         <div class="row-results">
-          <h6 class="card-university">{{ programme.university }}</h6>
+          <h6 class="card-university">{{ programme.university }}, {{ programme.university.city }}</h6>
           <p class="card-date">{{ programme.start_date }}</p>
         </div>
       </div>

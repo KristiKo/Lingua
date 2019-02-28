@@ -31,12 +31,21 @@
             </div>
             <div role="tabpanel" class="tab-pane fade" id="Section2">
                 <h3>Cost</h3>
-                <p>The cost for this course is: </p>
-                <p>£ {{ programme.cost }}</p>
+                <p>This programme costs: </p>
+                <div class="row">
+                    <p class="original-cost m-2">£ {{ programme.original_cost }} </p>
+                    <p class="m-2"> - if you join directly with {{ programme.university }}</p>
+                </div>
+                {% if programme.discount_cost %}
+                <div class="row">
+                    <p class="discount-cost m-2">£ {{ programme.discount_cost }}</p>
+                    <p class="m-2"> - if you join with us.</p>
+                </div>
+                {% endif %}
             </div>
             <div role="tabpanel" class="tab-pane fade" id="Section3">
                 <h3>More Info</h3>
-                <p>You can find more info about this programme by clicking <a href="{{ programme.programme_url }}">here</a></p>
+                <p>You can find more info about this programme <a href="{{ programme.programme_url }}">here</a></p>
             </div>
         </div>
     </div>
