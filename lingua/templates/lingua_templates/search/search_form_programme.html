@@ -37,37 +37,31 @@
   </div>
 </form>
 
-<!-- Show list of results -->
-  <div>
-    {% for programme in filter.qs %}
-    <a class="card-result" href="{{ programme.id }}">
-      <div class="search-result">
-        <div class="row-results">
-          <img class="img-result" src="{{ programme.image.url }}" alt="{{ programme.image }}">
-          <h4 class="card-name">{{ programme.name }}</h4>
-          <div>
-            {% if programme.discount_cost %}
-              <p class="card-price discount-cost" style="padding:2rem 0 0 0;">£ {{ programme.discount_cost }}</p>
-            {% endif %}
+{% for programme in filter.qs %}
+  <a href="{{ programme.id }}" class="card-result">
+    <div class="search-result">
+      <div class="lingua-card">
+        <img src="{{ programme.image.url }}" alt="english language course" class="lingua-image">
+        <div class="lingua-info">
+          <h2>{{ programme.name }}</h2>
+          <h5>{{ programme.university }}, {{ programme.university.city }}</h5>
+          <hr>
+          <p>From {{ programme.min_age }} years old</p>
+        </div>
+        <div class="lingua-cost">
+          {% if programme.discount_cost %}
+            <p class="card-price discount-cost" style="padding:2rem;"> £ {{ programme.discount_cost }}</p>
             <p class="card-price original-cost">£ {{ programme.original_cost }}</p>
-          </div>
-        </div>
-        <div class="row-results">
-            <p><i class="fas fa-graduation-cap lingua-icon-dark-small"></i>Award: {{ programme.award }}</p>
-            <p><i class="fas fa-book lingua-icon-dark-small"></i>Level: {{ programme.level }}</p>
-            <p><i class="far fa-clock lingua-icon-dark-small"></i>Duration: {{ programme.duration }} years</p>
-        </div>
-        <div class="row-results">
-          <h6 class="card-university">{{ programme.university }}, {{ programme.university.city }}</h6>
-          <p class="card-date">{{ programme.start_date }}</p>
+          {% else %}
+          <p class="card-price discount-cost" style="padding:2rem;"> £ {{ programme.original_cost }}</p>
+          {% endif %}
         </div>
       </div>
-    </a>
-    {% empty %}
-      <h1>Sorry, we could not find what you were looking for</h1>
-      <h4>Try with a more general search or <a style="text-decoration:none;" href="#">contact us</a></h4>
-    {% endfor %}
-  </div>
-</div>
+    </div>
+  </a>
+  {% empty %}
+  <h1>Sorry, we could not find what you were looking for</h1>
+  <h4>Try with a more general search or <a style="text-decoration:none;" href="#">contact us</a></h4>
+{% endfor %}
 {% include "lingua_templates/inc/footer.html" %}
 {% endblock %}

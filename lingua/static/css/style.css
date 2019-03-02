@@ -149,7 +149,7 @@ label, legend{
 .search-flex{
     display: flex;
     margin: 7rem auto;
-    width: 60%;
+    width: 75%;
     justify-content: space-between;
 }
 .form-flex{
@@ -183,26 +183,23 @@ ul > a:hover {
 ul > li {
     font-size: 12px;
 }
-.img-result{
+
+.lingua-card{
+    display: flex;
+    justify-content: space-between;
+}
+.lingua-image{
     width: 15rem;
     height: 10rem;
+    padding: 2rem;
 }
-.row-results{
-    display: flex;
-    justify-content: space-evenly;
-    border-bottom: 1px solid lightgrey;
-    padding: 1rem;
-}
-.card-result:hover{
-    text-decoration: none;
-}
-.card-name, .card-price, .card-university, .card-date{
-    text-decoration: none;
-    color: #273845;
-}
-.card-name, .card-price, .card-university, .card-date:hover{
-    text-decoration: none;
-    color: #273845;
+@media screen and (max-width: 768px) {
+    .lingua-card {
+        display: block;
+    }
+    .lingua-image{
+        width: 90%;
+    }
 }
 .original-cost{
     text-decoration: line-through;
@@ -691,14 +688,13 @@ figure.snip1139 .author h5 span {
 .help-section{
     display: flex;
     justify-content: space-evenly;
-    width: 60%;
     margin: 0 auto;
 }
 .help-section > a {
     background-color: white;
     border-radius: 10px;
-    padding: 20px;
-    width: 10rem;
+    padding: 1rem;
+    width: 15rem;
     transition: transform .2s;
     text-decoration: none;
 }
@@ -713,7 +709,7 @@ figure.snip1139 .author h5 span {
 .help-center > .fa {
     font-size: 30px !important;
 }
-.help-center > p {
+.help-center p {
     color: #66737c;
 }
 .special-img{
@@ -721,7 +717,7 @@ figure.snip1139 .author h5 span {
 }
 @media only screen and (max-width: 479px){
     .apply, .help{
-        padding: 4rem;
+        padding: 3rem;
     }
     .help-section{
         display: block;

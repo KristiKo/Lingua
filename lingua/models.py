@@ -47,7 +47,7 @@ class Course(models.Model):
     coordinate_long = models.DecimalField(max_digits=7, decimal_places=4, null=True)
     college_url = models.URLField(null=True)
     duration = models.IntegerField(null=True)
-    start_date = models.DateField(null=True)
+    start_date = models.CharField(max_length=140, null=True, blank=True)
     type = models.CharField(max_length=140, null=True)
     description = models.TextField(null=True)
     attendance = models.CharField(max_length=140, null=True)

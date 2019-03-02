@@ -30,32 +30,31 @@
   </div>
 </form>
 
-<!-- Show list of results -->
-  <div>
-    {% for course in filter.qs %}
-    <a class="card-result" href="{{ course.id }}">
-      <div class="search-result">
-        <div class="row-results">
-          <img class="img-result" src="{{ course.image.url }}" alt="{{ course.image }}">
-          <h4 class="card-name">{{ course.name }}</h4>
-          <div>
-            {% if course.discount_cost1 %}
-              <p class="card-price discount-cost" style="padding:2rem 0 0 0;"> From £ {{ course.discount_cost1 }}</p>
-            {% endif %}
-            <p class="card-price original-cost">From £ {{ course.original_cost1 }}</p>
-          </div>
+{% for course in filter.qs %}
+  <a href="{{ course.id }}" class="card-result">
+    <div class="search-result">
+      <div class="lingua-card">
+        <img src="{{ course.image.url }}" alt="english language course" class="lingua-image">
+        <div class="lingua-info">
+          <h2>{{ course.name }}</h2>
+          <h5>{{ course.college }}, {{ course.college.city }}</h5>
+          <hr>
+          <p>From {{ course.min_age }} years old</p>
         </div>
-        <div class="row-results">
-          <h6 class="card-university">{{ course.college }}, {{course.college.city}}</h6>
-          <p class="card-date">{{ course.start_date }}</p>
+        <div class="lingua-cost">
+          {% if course.discount_cost1 %}
+            <p class="card-price discount-cost" style="padding:2rem;"> £ {{ course.discount_cost1 }}</p>
+            <p class="card-price original-cost">£ {{ course.original_cost1 }}</p>
+          {% else %}
+          <p class="card-price discount-cost" style="padding:2rem;"> £ {{ course.original_cost1 }}</p>
+          {% endif %}
         </div>
       </div>
-    </a>
-    {% empty %}
-      <h1>Sorry, we could not find what you were looking for</h1>
-      <h4>Try with a more general search or <a style="text-decoration:none;" href="#">contact us</a></h4>
-    {% endfor %}
-  </div>
-</div>
+    </div>
+  </a>
+  {% empty %}
+  <h1>Sorry, we could not find what you were looking for</h1>
+  <h4>Try with a more general search or <a style="text-decoration:none;" href="#">contact us</a></h4>
+{% endfor %}
 {% include "lingua_templates/inc/footer.html" %}
 {% endblock %}
