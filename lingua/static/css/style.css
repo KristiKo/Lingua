@@ -149,7 +149,7 @@ label, legend{
 .search-flex{
     display: flex;
     margin: 7rem auto;
-    width: 75%;
+    width: 60%;
     justify-content: space-between;
 }
 .form-flex{
@@ -194,6 +194,15 @@ ul > li {
     padding: 2rem;
 }
 @media screen and (max-width: 768px) {
+    #search-form-programme, #search-form-course{
+        width: 100%;
+        padding: 4rem 0;
+    }
+    #search-form-programme select, #search-form-programme input,
+    #search-form-course select, #search-form-course input {
+        width: 80%;
+        margin: 0 auto;
+    }
     .lingua-card {
         display: block;
     }
@@ -212,6 +221,7 @@ ul > li {
 @media screen and (max-width: 900px) {
     .search-flex {
         display: block;
+        width: 75%;
     }
 }
 .icons{

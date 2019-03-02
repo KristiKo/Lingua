@@ -31,37 +31,69 @@
             <div role="tabpanel" class="tab-pane fade" id="Section2">
                 <h3>Options & Costs</h3>
                 <div class="row">
+
+                    {% if course.option1 %}
                     <div class="m-5">
+                        {% if course.discount_cost1 %}
                         <p class="discount-cost">£ {{ course.discount_cost1 }}</p>
                         <p class="original-cost">£ {{ course.original_cost1 }}</p>
                         <p>{{ course.option1 }}</p>
+                        {% else %}
+                        <p class="discount-cost">£ {{ course.original_cost1 }}</p>
+                        <p>{{ course.option1 }}</p>
+                        {% endif %}
                     </div>
+                    {% endif %}
+
                     {% if course.option2 %}
                     <div class="m-5">
+                        {% if course.discount_cost2 %}
                         <p class="discount-cost">£ {{ course.discount_cost2 }}</p>
                         <p class="original-cost">£ {{ course.original_cost2 }}</p>
                         <p>{{ course.option2 }}</p>
+                        {% else %}
+                        <p class="discount-cost">£ {{ course.original_cost2 }}</p>
+                        <p>{{ course.option2 }}</p>
+                        {% endif %}
                     </div>
                     {% endif %}
+
                     {% if course.option3 %}
                     <div class="m-5">
+                        {% if course.discount_cost3 %}
                         <p class="discount-cost">£ {{ course.discount_cost3 }}</p>
                         <p class="original-cost">£ {{ course.original_cost3 }}</p>
                         <p>{{ course.option3 }}</p>
+                        {% else %}
+                        <p class="discount-cost">£ {{ course.original_cost3 }}</p>
+                        <p>{{ course.option3 }}</p>
+                        {% endif %}
                     </div>
                     {% endif %}
+
                     {% if course.option4 %}
                     <div class="m-5">
+                        {% if course.discount_cost4 %}
                         <p class="discount-cost">£ {{ course.discount_cost4 }}</p>
                         <p class="original-cost">£ {{ course.original_cost4 }}</p>
                         <p>{{ course.option4 }}</p>
+                        {% else %}
+                        <p class="discount-cost">£ {{ course.original_cost4 }}</p>
+                        <p>{{ course.option4 }}</p>
+                        {% endif %}
                     </div>
                     {% endif %}
+
                     {% if course.option5 %}
                     <div class="m-5">
+                        {% if course.discount_cost5 %}
                         <p class="discount-cost">£ {{ course.discount_cost5 }}</p>
                         <p class="original-cost">£ {{ course.original_cost5 }}</p>
                         <p>{{ course.option5 }}</p>
+                        {% else %}
+                        <p class="discount-cost">£ {{ course.original_cost5 }}</p>
+                        <p>{{ course.option5 }}</p>
+                        {% endif %}
                     </div>
                     {% endif %}
                 </div>
