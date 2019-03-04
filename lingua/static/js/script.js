@@ -26,9 +26,19 @@ function toggleAccordion(){
 
 items.forEach(item => item.addEventListener('click', toggleAccordion));
 
-/* Dashboard */
-$( document ).ready(function() {
 
+$("#menu-toggle").click(function(e) {
+  e.preventDefault();
+  $("#wrapper").toggleClass("toggled");
+});
+$("#menu-toggle-2").click(function(e) {
+  e.preventDefault();
+  $("#wrapper").toggleClass("toggled-2");
+  $('#menu ul').hide();
+});
+
+$( document ).ready(function() {
+  /* Dashboard */
   $(".main-sub-menu").on("click",function(){
     $('.main-sub-menu').find(".fa-angle-right").css({"transform":"rotate(0deg)"});
     $(this).find("ul").slideToggle();

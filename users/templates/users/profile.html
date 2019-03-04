@@ -4,143 +4,193 @@
 {% block content %}
 
 {% include "lingua_templates/inc/navbar.html" %}
+<nav class="navbar navbar-default no-margin">
+    <div class="navbar-header fixed-brand">
+        <button type="button" class="navbar-toggle collapsed expand" data-toggle="collapse" id="menu-toggle">
+           <i class="fas fa-plus lingua-icon-dark-small"></i>
+        </button>
+    </div>
 
-<section>
-    <div class="dashboard">
-        <div class="sidebar">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li class="active"><button class="navbar-toggle collapse in" data-toggle="collapse" id="menu-toggle-2">
+                    <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span></button></li>
+        </ul>
+    </div>
+</nav>
+<div id="wrapper">
+    <div id="sidebar-wrapper">
             <ul class="main-menu">
-                <li style="padding:1rem;">
-                    <p class="user-name"> Welcome: {{ user.username }}</p>
-                    <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
-                </li>
-                <li class="main-sub-menu"><a href="#"><i class="fa fa-user"></i> Personal Info <i class="fas fa-angle-right"></i></a>
-                    <ul class="sub-menu">
-                        <li><a href="#"> Full Name</a></li>
-                        <li><a href="#"> Profile picture</a></li>
-                        <li><a href="#"> Email address</a></li>
-                        <li><a href="#"> Phone number</a></li>
-                        <li><a href="#"> Current address</a></li>
-                    </ul>
-                </li>
-                <li class="main-sub-menu"><a href="#"><i class="fa fa-id-card"></i> Passport <i class="fas fa-angle-right"></i></a>
-                    <ul class="sub-menu">
-                        <li><a href="#" style="color:red;"> Mandatory *</a></li>
-                        <li><a href="#"> First page picture</a></li>
-                    </ul>
-                </li>
-                <li class="main-sub-menu"><a href="#"><i class="fa fa-id-card"></i> Visa <i class="fas fa-angle-right"></i></a>
-                    <ul class="sub-menu">
-                        <li><a href="#"> If applicable * </a></li>
-                    </ul>
-                </li>
-                <li class="main-sub-menu"><a href="#"><i class="fa fa-envelope"></i> CAS Letter <i class="fas fa-angle-right"></i></a>
-                    <ul class="sub-menu">
-                        <li><a href="#"> If applicable * </a></li>
-                        <li><a href="#" style="color:red;"> University only * </a></li>
-                    </ul>
-                </li>
-                <li class="main-sub-menu"><a href="#"><i class="fa fa-book"></i> Recent Education <i class="fas fa-angle-right"></i></a>
-                    <ul class="sub-menu">
-                        <li><a href="#" style="color:red;"> University only * </a></li>
-                        <li><a href="#" style="color:red;"> Mandatory * </a></li>
-                    </ul>
-                </li>
-                <li class="main-sub-menu"><a href="#"><i class="fa fa-university"></i> University/College Preference  <i class="fas fa-angle-right"></i></a>
-                    <ul class="sub-menu">
-                        <li><a href="#"> University/College preference</a></li>
-                        <li><a href="#"> 3 preferences</a></li>
-                    </ul>
-                </li>
-                <li class="main-sub-menu"><a href="#"><i class="fa fa-pencil-alt"></i> Programme/Course preference  <i class="fas fa-angle-right"></i></a>
-                    <ul class="sub-menu">
-                        <li><a href="#"> Programme/Course preference</a></li>
-                        <li><a href="#"> 3 preferences</a></li>
-                    </ul>
-                </li>
-                <li class="main-sub-menu"><a href="#"><i class="fa fa-language"></i> English Level  <i class="fas fa-angle-right"></i></a>
-                    <ul class="sub-menu">
-                            <li><a href="" style="color:red;"> University only * </a></li>
-                        <li><a href="">IELTS certificate min 5.5</a></li>
-                    </ul>
-                </li>
-                <li class="main-sub-menu"><a href="#"><i class="fa fa-envelope"></i> Motivation Letter  <i class="fas fa-angle-right"></i></a>
-                    <ul class="sub-menu">
-                        <li><a href="#" style="color:red;"> University only * </a></li>
-                    </ul>
-                </li>
-                <li class="main-sub-menu"><a href="#"><i class="fa fa-list"></i> CV  <i class="fas fa-angle-right"></i></a>
-                    <ul class="sub-menu">
-                        <li><a href="#" style="color:red;"> Mandatory * </a></li>
-                        <li><a href="#"> Your most up to date CV</a></li>
-                    </ul>
-                </li>
-                <li class="main-sub-menu"><a href="#"><i class="fa fa-envelope"></i> Recommendations  <i class="fas fa-angle-right"></i></a>
-                    <ul class="sub-menu">
-                        <li><a href="#" style="color:red;"> University only * </a></li>
-                        <li><a href="#"> Up to 3, recommended 2</a></li>
-                    </ul>
-                </li>
-                <li class="main-sub-menu"><a href="{% url 'contact' %}"><i class="fa fa-phone"></i> Contact </a>
-                </li>
-            </ul>
-        </div>
-        <form  class="profile-form" method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            <legend class="border-bottom mb-4" style="padding:1rem;text-align:center;">Profile Info</legend>
-            <fieldset class="form-group">
-                {{ u_form|crispy }}
-                {{ p_form|crispy }}
-                <div class="privacy-agreement">
-                    <p>By clicking "I agree", I confirm I have read the <a href="#">Data Use Policy</a> and agree to our Terms and conditions.</p>
+                    <li style="padding:1rem;">
+                        <p class="user-name"> Welcome: {{ user.username }}</p>
+                        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+                    </li>
+                    <li class="main-sub-menu"><a href="#"><i class="fa fa-user"></i> Personal Info <i class="fas fa-angle-right"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="#"> Full Name</a></li>
+                            <li><a href="#"> Profile picture</a></li>
+                            <li><a href="#"> Email address</a></li>
+                            <li><a href="#"> Phone number</a></li>
+                            <li><a href="#"> Current address</a></li>
+                        </ul>
+                    </li>
+                    <li class="main-sub-menu"><a href="#"><i class="fa fa-id-card"></i> Passport <i class="fas fa-angle-right"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="#" style="color:red;"> Mandatory *</a></li>
+                            <li><a href="#"> First page picture</a></li>
+                        </ul>
+                    </li>
+                    <li class="main-sub-menu"><a href="#"><i class="fa fa-id-card"></i> Visa <i class="fas fa-angle-right"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="#"> If applicable * </a></li>
+                        </ul>
+                    </li>
+                    <li class="main-sub-menu"><a href="#"><i class="fa fa-envelope"></i> CAS Letter <i class="fas fa-angle-right"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="#"> If applicable * </a></li>
+                            <li><a href="#" style="color:red;"> University only * </a></li>
+                        </ul>
+                    </li>
+                    <li class="main-sub-menu"><a href="#"><i class="fa fa-book"></i> Recent Education <i class="fas fa-angle-right"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="#" style="color:red;"> University only * </a></li>
+                            <li><a href="#" style="color:red;"> Mandatory * </a></li>
+                        </ul>
+                    </li>
+                    <li class="main-sub-menu"><a href="#"><i class="fa fa-university"></i> University/College Preference  <i class="fas fa-angle-right"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="#"> University/College preference</a></li>
+                            <li><a href="#"> 3 preferences</a></li>
+                        </ul>
+                    </li>
+                    <li class="main-sub-menu"><a href="#"><i class="fa fa-pencil-alt"></i> Programme/Course preference  <i class="fas fa-angle-right"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="#"> Programme/Course preference</a></li>
+                            <li><a href="#"> 3 preferences</a></li>
+                        </ul>
+                    </li>
+                    <li class="main-sub-menu"><a href="#"><i class="fa fa-language"></i> English Level  <i class="fas fa-angle-right"></i></a>
+                        <ul class="sub-menu">
+                                <li><a href="" style="color:red;"> University only * </a></li>
+                            <li><a href="">IELTS certificate min 5.5</a></li>
+                        </ul>
+                    </li>
+                    <li class="main-sub-menu"><a href="#"><i class="fa fa-envelope"></i> Motivation Letter  <i class="fas fa-angle-right"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="#" style="color:red;"> University only * </a></li>
+                        </ul>
+                    </li>
+                    <li class="main-sub-menu"><a href="#"><i class="fa fa-list"></i> CV  <i class="fas fa-angle-right"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="#" style="color:red;"> Mandatory * </a></li>
+                            <li><a href="#"> Your most up to date CV</a></li>
+                        </ul>
+                    </li>
+                    <li class="main-sub-menu"><a href="#"><i class="fa fa-envelope"></i> Recommendations  <i class="fas fa-angle-right"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="#" style="color:red;"> University only * </a></li>
+                            <li><a href="#"> Up to 3, recommended 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="main-sub-menu"><a href="{% url 'contact' %}"><i class="fa fa-phone"></i> Contact </a>
+                    </li>
+                </ul>
+    </div>
+    <div id="page-content-wrapper">
+        <div class="container-fluid xyz">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div style="display:flex;">
+                    <form class="profile-form" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                            <legend class="border-bottom mb-4" style="padding:1rem;">Profile Info
+                                <div class="navbar-brand" href="#">
+                                    <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+                                    {{ user.username }}
+                                </div>
+                            </legend>
+                        <fieldset class="form-group">
+                            {{ u_form|crispy }}
+                            {{ p_form|crispy }}
+                            <div class="privacy-agreement">
+                                <p>By clicking "I agree", I confirm I have read the <a href="#">Data Use Policy</a> and
+                                    agree to our Terms and conditions.</p>
+                            </div>
+                        </fieldset>
+                        <div class="form-group">
+                            <button class="btn btn-outline-info" type="submit">Update</button>
+                        </div>
+                        <a id="privacy-btn" class="btn btn-primary" href="{% url 'notify' %}">Submit</a>
+                    </form>
+                    <div class="side-information">
+                        <div class="side-info">
+                            <h5>General Info</h5>
+                            <p>This is the username you registered with.
+                            Please upload a picture where your face is clearly visible.</p>
+                        </div>
+                        <div class="side-info">
+                            <h5>Passport</h5>
+                            <p>A front page picture of your password is mandatory if you are applying for a university programme
+                                or a language course. This can be  jpeg, pdf or even a picture takes with your phone, as long as it's readable.</p>
+                        </div>
+                        <div class="side-info">
+                            <h5>Visa</h5>
+                            <p>If you never had a Visa, don't worry. You don't need to upload it for now.
+                                If you had any previous UK visas, please upload them here (it can be a visitor visa, student visa or any other type of UK visa).</p>
+                        </div>
+                        <div class="side-info">
+                            <h5>CAS Letter</h5>
+                            <p>If you previously studied in the UK before, you need to have a CAS letter.
+                                A CAS letter, or 'Confirmation of Acceptance for Studies', is required as part of the visa extension/application process.
+                                If you get a CAS letter, always keep it safe. You will need it in the future.</p>
+                        </div>
+                        <div class="side-info">
+                            <h5>Previous Education</h5>
+                            <p>Only for University applicants *
+                                Please upload connected and compressed file of your most recent education.
+                                Please note the order should be Certificate – Transcript of Records – English Translation.</p>
+                        </div>
+                        <div class="side-info">
+                            <h5>Universities / College preferences</h5>
+                            <p>Write here your University preference if you are applying for a University programme
+                            or college preference if you are applying for a language course. We recommend writing up to 3 preferences.</p>
+                        </div>
+                        <div class="side-info">
+                            <h5>IELTS Certificate</h5>
+                            <p>Please upload your IELTS Academic Certificate here.
+                                The IELTS Academic test is suitable for entry to study at undergraduate or postgraduate levels, and also for professional registration purposes. It assesses whether you are ready to begin studying or training in an environment where English language is used and reflects some of the features of language used in academic study.      
+                                You can find more info on IELTS <a href="https://www.ielts.org/what-is-ielts/ielts-for-study" target="_blank">here</a>
+                                Please note, that overall score lower than 5.5 is not accepted, with a minimum of 5.0 in each band.</p>
+                        </div>
+                        <div class="side-info">
+                            <h5>Personal Statement</h5>
+                            <p>It’s your chance to describe your ambitions, suitability for the course, motivation, skills, and experience to university and college admissions staff.
+                                In order to write a good personal statement, what you need to do is simply answer the below mentioned questions:
+                                Why you are applying for this particular course?
+                                What do you hope to achieve through studying this course?
+                                How your past / current studies / experience supports your application?
+                                How this course is relevant to your future career / academic goals?
+                                If you are applying for a course that requires work experience, you should show how you meet this requirement
+                                Any additional information that you think is relevant to your application
+                                Still have problem with it? Give us your email and we will send you a sample and step by step instructions on how to write a good personal statement.</p>
+                        </div>
+                        <div class="side-info">
+                            <h5>CV</h5>
+                            <p>Your most up to date CV
+                                You can find more examples on how to write CVs and templates <a href="#" target="_blank">here</a></p>
+                        </div>
+                        <div class="side-info">
+                            <h5>References</h5>
+                            <p>If you want to study Undergraduate course, we need 2 academic references (teachers or professors).
+                                If your are applying for a master’s degree, MBA or PhD, we will need one academic reference and one reference from your employer.   
+                                Please note, that on the reference, should be below mentioned referee details.</p>
+                        </div>
+                    </div>
                 </div>
-            </fieldset>
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Update</button>
+                </div>
             </div>
-            <a id="privacy-btn" class="btn btn-primary" href="{% url 'notify' %}">Submit</a>
-        </form>
-        <div class="side-information">
-            <ul>
-                <li>This is the username you registered with.
-                    Please upload a picture where your face is clearly visible.
-                </li>
-                <li>A front page picture of your password is mandatory if you are applying for a university programme
-                    or a language course. This can be  jpeg, pdf or even a picture takes with your phone, as long as it's readable.
-                </li>
-                <li>If you never had a Visa, don't worry. You don't need to upload it for now.
-                    If you had any previous UK visas, please upload them here (it can be a visitor visa, student visa or any other type of UK visa).</li>
-                <li>If you previously studied in the UK before, you need to have a CAS letter.
-                    A CAS letter, or 'Confirmation of Acceptance for Studies', is required as part of the visa extension/application process.
-                    If you get a CAS letter, always keep it safe. You will need it in the future.</li>
-                <li>Only for University applicants *
-                    Please upload connected and compressed file of your most recent education.
-                    Please note the order should be Certificate – Transcript of Records – English Translation.</li>
-                <li>Write here your University preference if you are applying for a University programme
-                    or college preference if you are applying for a language course. We recommend writing up to 3 preferences.
-                </li>
-                <li>We recommend writing up to 3 preferences if you are applying for a university programme or a language course.</li>
-                <li>Please upload your IELTS Academic Certificate here.
-                    The IELTS Academic test is suitable for entry to study at undergraduate or postgraduate levels, and also for professional registration purposes. It assesses whether you are ready to begin studying or training in an environment where English language is used and reflects some of the features of language used in academic study.      
-                    You can find more info on IELTS <a href="https://www.ielts.org/what-is-ielts/ielts-for-study" target="_blank">here</a>
-                    Please note, that overall score lower than 5.5 is not accepted, with a minimum of 5.0 in each band.</li>
-                <li>It’s your chance to describe your ambitions, suitability for the course, motivation, skills, and experience to university and college admissions staff.
-                    In order to write a good personal statement, what you need to do is simply answer the below mentioned questions:
-                    Why you are applying for this particular course?
-                    What do you hope to achieve through studying this course?
-                    How your past / current studies / experience supports your application?
-                    How this course is relevant to your future career / academic goals?
-                    If you are applying for a course that requires work experience, you should show how you meet this requirement
-                    Any additional information that you think is relevant to your application
-                    Still have problem with it? Give us your email and we will send you a sample and step by step instructions on how to write a good personal statement.</li>
-                <li>Your most up to date CV
-                    You can find more examples on how to write CVs and templates <a href="#" target="_blank">here</a></li>
-                <li>If you want to study Undergraduate course, we need 2 academic references (teachers or professors).
-                    If your are applying for a master’s degree, MBA or PhD, we will need one academic reference and one reference from your employer.   
-                    Please note, that on the reference, should be below mentioned referee details.</li>
-            </ul>
         </div>
     </div>
-</section>
 </div>
 {% include "lingua_templates/inc/footer.html" %}
 {% endblock content %}

@@ -36,7 +36,9 @@
                     <div class="m-5">
                         {% if course.discount_cost1 %}
                         <p class="discount-cost">£ {{ course.discount_cost1 }}</p>
+                        <p>If you book with Lingua International</p>
                         <p class="original-cost">£ {{ course.original_cost1 }}</p>
+                        <p>If you book with {{ course.college.name }}</p>
                         <p>{{ course.option1 }}</p>
                         {% else %}
                         <p class="discount-cost">£ {{ course.original_cost1 }}</p>
@@ -49,7 +51,9 @@
                     <div class="m-5">
                         {% if course.discount_cost2 %}
                         <p class="discount-cost">£ {{ course.discount_cost2 }}</p>
+                        <p>If you book with Lingua International</p>
                         <p class="original-cost">£ {{ course.original_cost2 }}</p>
+                        <p>If you book with {{ course.college.name }}</p>
                         <p>{{ course.option2 }}</p>
                         {% else %}
                         <p class="discount-cost">£ {{ course.original_cost2 }}</p>
@@ -62,7 +66,9 @@
                     <div class="m-5">
                         {% if course.discount_cost3 %}
                         <p class="discount-cost">£ {{ course.discount_cost3 }}</p>
+                        <p>If you book with Lingua International</p>
                         <p class="original-cost">£ {{ course.original_cost3 }}</p>
+                        <p>If you book with {{ course.college.name }}</p>
                         <p>{{ course.option3 }}</p>
                         {% else %}
                         <p class="discount-cost">£ {{ course.original_cost3 }}</p>
@@ -75,7 +81,9 @@
                     <div class="m-5">
                         {% if course.discount_cost4 %}
                         <p class="discount-cost">£ {{ course.discount_cost4 }}</p>
+                        <p>If you book with Lingua International</p>
                         <p class="original-cost">£ {{ course.original_cost4 }}</p>
+                        <p>If you book with {{ course.college.name }}</p>
                         <p>{{ course.option4 }}</p>
                         {% else %}
                         <p class="discount-cost">£ {{ course.original_cost4 }}</p>
@@ -88,7 +96,9 @@
                     <div class="m-5">
                         {% if course.discount_cost5 %}
                         <p class="discount-cost">£ {{ course.discount_cost5 }}</p>
+                        <p>If you book with Lingua International</p>
                         <p class="original-cost">£ {{ course.original_cost5 }}</p>
+                        <p>If you book with {{ course.college.name }}</p>
                         <p>{{ course.option5 }}</p>
                         {% else %}
                         <p class="discount-cost">£ {{ course.original_cost5 }}</p>
@@ -126,12 +136,12 @@
     <div>
         <h3>Not sure how to apply?</h3>
         <p>Start by reading here</p>
-        <button class="btn btn-primary">How To Apply</button>
+        <a href="{% url 'how_to_apply' %}" class="btn btn-primary">How to apply</a>
     </div>
     <div>
         <h3>Ready to apply?</h3>
         <p>Start your application here</p>
-        <button class="btn btn-primary">Apply</button>
+        <a href="{% url 'register' %}" class="btn btn-primary">Register</a>
     </div>
 </div>
 
