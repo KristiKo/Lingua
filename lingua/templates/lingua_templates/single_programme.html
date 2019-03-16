@@ -25,7 +25,10 @@
                 <div class="row">
                     <p class="icons"><i class="fas fa-graduation-cap lingua-icon-dark-small"></i>Award: {{ programme.award }}</p>
                     <p class="icons"><i class="fas fa-book lingua-icon-dark-small"></i>Level: {{ programme.level }}</p>
-                    <p class="icons"><i class="far fa-clock lingua-icon-dark-small"></i>Duration: {{ programme.duration }} years</p>
+                    <p class="icons"><i class="far fa-clock lingua-icon-dark-small"></i>Duration: {{ programme.duration }} year(s)</p>
+                    <p class="icons"><i class="far fa-clock lingua-icon-dark-small"></i>University ranking: {{ programme.ranking }}</p>
+                    <p><i class="fas fa-map-marker-alt lingua-icon-dark-small"></i><a href=" {{ course.address_link }} "
+                            target="_blank">{{ course.address }}</a></p>
                 </div>
                 <p>{{ programme.description|linebreaks }}</p>
             </div>
@@ -55,17 +58,17 @@
 <div id="mapid"></div>
 
 <div class="search-flex">
-        <div>
-            <h3>Not sure how to apply?</h3>
-            <p>Start by reading here</p>
-            <a href="{% url 'how_to_apply' %}" class="btn btn-primary">How to apply</a>
-        </div>
-        <div>
-            <h3>Ready to apply?</h3>
-            <p>Start your application here</p>
-            <a href="{% url 'register' %}" class="btn btn-primary">Register</a>
-        </div>
+    <div>
+        <h3>Not sure how to apply?</h3>
+        <p>Start by reading here</p>
+        <a href="{% url 'how_to_apply' %}" class="btn btn-primary">How to apply</a>
     </div>
+    <div>
+        <h3>Ready to apply?</h3>
+        <p>Start your application here</p>
+        <a href="{% url 'register' %}" class="btn btn-primary">Register</a>
+    </div>
+</div>
 <div style="background-color: #f8f9fa !important;" class="bg bg-light apply cta linguaFade">
     <h1>Any questions?</h1>
     <p> We are always available and happy to help you</p>

@@ -46,7 +46,8 @@
           <h2>{{ programme.name }}</h2>
           <h5>{{ programme.university }}, {{ programme.university.city }}</h5>
           <hr>
-          <p>From {{ programme.min_age }} years old</p>
+          <p>Programme duration: {{ programme.duration }} year(s)</p>
+          <p>University Ranking: {{ programme.ranking }}</p>
         </div>
         <div class="lingua-cost">
           {% if programme.discount_cost %}
