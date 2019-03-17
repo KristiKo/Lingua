@@ -2,13 +2,15 @@
 {% load staticfiles %}
 {% block content %}
 {% include "lingua_templates/inc/navbar.html" %}
+
+
 <section class="text-center my-5">
   <h1 class="h1-responsive font-weight-bold my-5">How to apply</h1>
   <div class="row" style="justify-content:space-evenly;">
     <div class="col-md-3">
       <i class="fas fa-mobile lingua-icon-dark"></i>
       <h5 class="font-weight-bold my-4">Easy</h5>
-      <p class="grey-text mb-md-0 mb-5">Great news! It has never been easier to apply to UK Universities.
+      <p class="grey-text mb-md-0 mb-5">Apply form your smartphone or laptop. Pick up where you left off.
       </p>
     </div>
     <div class="col-md-3">
@@ -26,86 +28,172 @@
   </div>
 </section>
 
-<!-- Main -->
 <section class="my-5">
   <div class="row">
     <div class="col-lg-5 mb-lg-0 mb-5">
-      <img src="{%static 'assets/flowers.jpg' %}" alt="Sample project image" class="img-fluid rounded z-depth-1">
+      <img class="apply-img-left" src="{%static 'assets/reg_demo.jpg' %}" alt="Lingua register" class="img-fluid rounded z-depth-1">
     </div>
-    <div class="col-lg-5" style="padding-left:2rem;">
-      <div class="row mb-3">
-        <div class="col-md-1 col-2">
-          <i class="fas fa-search lingua-icon-dark"></i>
-        </div>
-        <div class="col-md-11 col-10">
-          <h4 class="font-weight-bold mb-3"><strong>Search your favourite programme</strong></h4>
-          <p>Browse our catalogue for <a href="{% url 'search_course' %}" target="_blank">courses</a> and <a href="{% url 'search_programme' %}" target="_blank">programmes</a> 
-            in the best UK universities and language schools.</p>
+    <div class="col-lg-5">
+      <div class="mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__supporting-text">
+          <div class="mdl-stepper-horizontal-alternative">
+            <div class="mdl-stepper-step active-step step-done">
+              <div class="mdl-stepper-circle"><span>1</span></div>
+              <div class="mdl-stepper-title">Search for a programme or a language course</div>
+              <div class="mdl-stepper-bar-left"></div>
+              <div class="mdl-stepper-bar-right"></div>
+            </div>
+            <div class="mdl-stepper-step">
+              <div class="mdl-stepper-circle"><span>2</span></div>
+              <div class="mdl-stepper-title">Register to create your profile</div>
+              <div class="mdl-stepper-bar-left"></div>
+              <div class="mdl-stepper-bar-right"></div>
+            </div>
+            <div class="mdl-stepper-step">
+              <div class="mdl-stepper-circle"><span>3</span></div>
+              <div class="mdl-stepper-title">Upload your documents</div>
+              <div class="mdl-stepper-bar-left"></div>
+              <div class="mdl-stepper-bar-right"></div>
+            </div>
+            <div class="mdl-stepper-step">
+              <div class="mdl-stepper-circle"><span>4</span></div>
+              <div class="mdl-stepper-title">Submit your application</div>
+              <div class="mdl-stepper-bar-left"></div>
+              <div class="mdl-stepper-bar-right"></div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row mb-3">
-        <div class="col-md-1 col-2">
-          <i class="fas fa-user-plus lingua-icon-dark"></i>
-        </div>
-        <div class="col-md-11 col-10">
-          <h4 class="font-weight-bold mb-3"><strong>Register to out student dashboard.</strong></h4>
-          <p>Registering is super easy. Once you have found the courses or programme which you like you can register <a href="{% url 'register' %}" target="_blank">here</a></p>
+
+      <div class="apply-desc">
+        <p>
+          Search<a href="{% url 'search_programme' %}"> here</a> for a university programme or <a href="{% url 'search_course' %}">here</a> for a language course all around the UK.
+        </p>
+      </div>
+
+      <div class="mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__supporting-text">
+          <div class="mdl-stepper-horizontal-alternative">
+            <div class="mdl-stepper-step">
+              <div class="mdl-stepper-circle"><span>1</span></div>
+              <div class="mdl-stepper-title">Search for a programme or a language course</div>
+              <div class="mdl-stepper-bar-left"></div>
+              <div class="mdl-stepper-bar-right"></div>
+            </div>
+            <div class="mdl-stepper-step active-step step-done">
+              <div class="mdl-stepper-circle"><span>2</span></div>
+              <div class="mdl-stepper-title">Register to create your profile</div>
+              <div class="mdl-stepper-bar-left"></div>
+              <div class="mdl-stepper-bar-right"></div>
+            </div>
+            <div class="mdl-stepper-step">
+              <div class="mdl-stepper-circle"><span>3</span></div>
+              <div class="mdl-stepper-title">Upload your documents</div>
+              <div class="mdl-stepper-bar-left"></div>
+              <div class="mdl-stepper-bar-right"></div>
+            </div>
+            <div class="mdl-stepper-step">
+              <div class="mdl-stepper-circle"><span>4</span></div>
+              <div class="mdl-stepper-title">Submit your application</div>
+              <div class="mdl-stepper-bar-left"></div>
+              <div class="mdl-stepper-bar-right"></div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-1 col-2">
-          <i class="fas fa-user-graduate lingua-icon-dark"></i>
-        </div>
-        <div class="col-md-11 col-10">
-          <h4 class="font-weight-bold mb-3"><strong>Create your student profile</strong></h4>
-          <p>Upload the required documents. University and Language schools require different documents but don’t worry, you can find detailed instruction in your dashboard. 
-            If in doubt, you can <a href="{% url 'contact' %}" target="_blank">contact</a> us anytime.
-            No need to provide everything at once. Update your profile and come back to it when you prefer. Once you are ready, submit your application, sit back and relax.
-          </p>
-        </div>
+      <div class="apply-desc">
+        <p>
+          Create your profile by registering <a href="{% url 'register' %}"> here</a>
+        </p>
       </div>
     </div>
   </div>
   <hr class="my-5">
   <div class="row">
-    <div class="col-lg-5" style="padding-left:2rem;">
-      <div class="row mb-3">
-        <div class="col-md-1 col-2">
-          <i class="fas fa-cogs lingua-icon-dark"></i>
-        </div>
-        <div class="col-md-11 col-10">
-          <h4 class="font-weight-bold mb-3"><strong>Processing...</strong></h4>
-          <p>We will process your application within 24h. 
-              We will let you know if you’re application was complete or if you need to provide more info.
-          </p>
+    <div class="col-lg-5">
+      <div class="mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__supporting-text">
+          <div class="mdl-stepper-horizontal-alternative">
+            <div class="mdl-stepper-step">
+              <div class="mdl-stepper-circle"><span>1</span></div>
+              <div class="mdl-stepper-title">Search for a programme or a language course</div>
+              <div class="mdl-stepper-bar-left"></div>
+              <div class="mdl-stepper-bar-right"></div>
+            </div>
+            <div class="mdl-stepper-step">
+              <div class="mdl-stepper-circle"><span>2</span></div>
+              <div class="mdl-stepper-title">Register to create your profile</div>
+              <div class="mdl-stepper-bar-left"></div>
+              <div class="mdl-stepper-bar-right"></div>
+            </div>
+            <div class="mdl-stepper-step active-step step-done">
+              <div class="mdl-stepper-circle"><span>3</span></div>
+              <div class="mdl-stepper-title">Upload your documents</div>
+              <div class="mdl-stepper-bar-left"></div>
+              <div class="mdl-stepper-bar-right"></div>
+            </div>
+            <div class="mdl-stepper-step">
+              <div class="mdl-stepper-circle"><span>4</span></div>
+              <div class="mdl-stepper-title">Submit your application</div>
+              <div class="mdl-stepper-bar-left"></div>
+              <div class="mdl-stepper-bar-right"></div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row mb-3">
-        <div class="col-md-1 col-2">
-          <i class="fas fa-passport lingua-icon-dark"></i>
-        </div>
-        <div class="col-md-11 col-10">
-          <h4 class="font-weight-bold mb-3"><strong>Getting Ready</strong></h4>
-          <p>You will receive an online interview invitation. A personal advisor will prepare you to the interview.
-            Now it is also a good time to prepare your bank statement which will be required by the university before the final offer.
-            Pay your fees directly to the university. Remember to do this before the deadline and get a discount through Lingua International.
-            </p>
+
+      <div class="apply-desc">
+        <p>
+          From your profile dashboard, upload the requireds document to apply. Once done, simply submit your request...
+        </p>
+      </div>
+
+      <div class="mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__supporting-text">
+          <div class="mdl-stepper-horizontal-alternative">
+            <div class="mdl-stepper-step">
+              <div class="mdl-stepper-circle"><span>1</span></div>
+              <div class="mdl-stepper-title">Search for a programme or a language course</div>
+              <div class="mdl-stepper-bar-left"></div>
+              <div class="mdl-stepper-bar-right"></div>
+            </div>
+            <div class="mdl-stepper-step">
+              <div class="mdl-stepper-circle"><span>2</span></div>
+              <div class="mdl-stepper-title">Register to create your profile</div>
+              <div class="mdl-stepper-bar-left"></div>
+              <div class="mdl-stepper-bar-right"></div>
+            </div>
+            <div class="mdl-stepper-step">
+              <div class="mdl-stepper-circle"><span>3</span></div>
+              <div class="mdl-stepper-title">Upload your documents</div>
+              <div class="mdl-stepper-bar-left"></div>
+              <div class="mdl-stepper-bar-right"></div>
+            </div>
+            <div class="mdl-stepper-step active-step step-done">
+              <div class="mdl-stepper-circle"><span>4</span></div>
+              <div class="mdl-stepper-title">Submit your application</div>
+              <div class="mdl-stepper-bar-left"></div>
+              <div class="mdl-stepper-bar-right"></div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row mb-lg-0 mb-5">
-        <div class="col-md-1 col-2">
-          <i class="fas fa-rocket lingua-icon-dark"></i>
-        </div>
-        <div class="col-md-11 col-10">
-          <h4 class="font-weight-bold mb-3"><strong>Pack up and start your adventure…</strong></h4>
-          <p>Don't forget to take the most important with you...</p>
-        </div>
+      <div class="apply-desc">
+        <p>
+          Once submitted we'll review your application within 24h. We will let you know if all the documents you uploaded are valid or if you need to amend your application. <a href="{% url 'contact' %}">Contact</a> us if you need help to write or improve your documents to maximize your chance of success.
+        </p>
       </div>
     </div>
     <div class="col-lg-5">
-      <img src="{%static 'assets/graduation-day.jpg' %}" alt="Sample project image" class="img-fluid rounded z-depth-1">
+      <img class="apply-img-right" src="{%static 'assets/apply_demo.png' %}" alt="Lingua Apply image" class="img-fluid rounded z-depth-1">
     </div>
   </div>
+  <div style="background-color: #f8f9fa !important;" class="bg bg-light apply cta linguaFade">
+    <h1>Ready to apply?</h1>
+    <p> Start by creating your student profile.</br>
+        Forget about the paperwork and get ready for your life adventure...</p>
+    <a href="{% url 'register' %}" class="btn btn-primary">Register</a>
+</div>
 </section>
 
 <!-- {% if fields %}

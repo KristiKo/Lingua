@@ -45,10 +45,10 @@
       <li class="nav-item underline">
         <a class="nav-link navbar-links" href="{% url 'register' %}">Register</a>
       </li>
-      <li style="margin-left:30rem;" class="nav-item">
+      {% endif %}
+      <li class="nav-item">
         <a href="{% url 'contact' %}"><button style="width:11rem;" class="btn btn-primary">Book Free Consultation</button></a>
       </li>
-      {% endif %}
     </ul>
   </div>
 </nav>
