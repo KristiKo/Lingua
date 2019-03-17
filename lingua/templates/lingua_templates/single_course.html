@@ -27,8 +27,7 @@
                     <p><i class="fas fa-users lingua-icon-dark-small"></i>{{ course.student_per_class }} students per
                         class</p>
                     <p><i class="far fa-clock lingua-icon-dark-small"></i>Lesson {{ course.lesson_durations }} minutes</p>
-                    <p><i class="fas fa-map-marker-alt lingua-icon-dark-small"></i><a href=" {{ course.address_link }} "
-                            target="_blank">{{ course.address }}</a></p>
+                    <p><i class="fas fa-map-marker-alt lingua-icon-dark-small"></i><a id="address" href=" {{ course.address_link }} " target="_blank">{{ course.address }}</a></p>
                 </div>
                 <p>{{ course.start_date }}</p>
                 <p>{{ course.description|linebreaks }}</p>

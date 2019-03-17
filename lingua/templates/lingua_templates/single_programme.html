@@ -27,8 +27,7 @@
                     <p class="icons"><i class="fas fa-book lingua-icon-dark-small"></i>Level: {{ programme.level }}</p>
                     <p class="icons"><i class="far fa-clock lingua-icon-dark-small"></i>Duration: {{ programme.duration }} year(s)</p>
                     <p class="icons"><i class="far fa-clock lingua-icon-dark-small"></i>University ranking: {{ programme.ranking }}</p>
-                    <p><i class="fas fa-map-marker-alt lingua-icon-dark-small"></i><a href=" {{ course.address_link }} "
-                            target="_blank">{{ course.address }}</a></p>
+                    <p><i class="fas fa-map-marker-alt lingua-icon-dark-small"></i><a id="address" href=" {{ programme.address_link }} " target="_blank">{{ programme.address }}</a></p>
                 </div>
                 <p>{{ programme.description|linebreaks }}</p>
             </div>

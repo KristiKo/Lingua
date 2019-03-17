@@ -111,5 +111,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 });
 {icon: greenIcon}) to add after [lat, long] */
 
+var address = document.getElementById('address').innerHTML;
+
 var marker = L.marker([lat, long]).addTo(mymap);
-marker.bindPopup("<b>Hello student!</b><br>University address.").openPopup();
+marker.bindPopup("<b>Hello student!</b><br>" + address).openPopup();
