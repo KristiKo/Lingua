@@ -1,5 +1,5 @@
 /* Fade in on scroll effect */
-/* $(document).ready(function() {
+$(document).ready(function() {
   var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   if (!isMobile) {
       $(window).scroll( function(){
@@ -10,12 +10,12 @@
             
             if( bottom_of_window > bottom_of_object ){
                 
-                $(this).animate({'opacity':'1'},1200);                  
+                $(this).animate({'opacity':'1'},1000);                  
             }        
         });  
     }); 
   }
-}); */
+});
 /* Faqs */
 const items = document.querySelectorAll(".accordion a");
 

@@ -86,9 +86,9 @@ label{
 label, legend{
     color: white;
 }
-/* .linguaFade{
+.linguaFade{
     opacity: 0;
-} */
+}
 .logo{
     border-radius: 50%;
     width: 5rem;
