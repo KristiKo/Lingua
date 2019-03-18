@@ -6,29 +6,22 @@
 {% block content %}
 {% include "lingua_templates/inc/navbar.html" %}
 
-<form id="search-form-programme" method="get">
+<form id="search-form-programme" class="bg-light" method="get">
   <div class="well">
     <h1>Find a programme:</h1>
     <h1 style="color:grey;">{{ filter.qs.count }}</h1>
     <div class="row">
       <div class="form-group col-sm-4 col-md-3">
         <p>By university</p>
-        <!-- {{ filter.form.university.label_tag }} -->
         {% render_field filter.form.university class="form-control" %}
       </div>
       <div class="form-group col-sm-4 col-md-3">
-        <p>By name: </p>
-        <!-- {{ filter.form.name.label_tag }} -->
+        <p>By programme name: </p>
         {% render_field filter.form.name class="form-control" %}
       </div>
-      <!-- <div class="form-group col-sm-4 col-md-3">
-        {{ filter.form.price.label_tag }}
-        {% render_field filter.form.price class="form-control" %}
-      </div> -->
       <div class="form-group col-sm-4 col-md-3">
-        <p>By duration (in years): </p>
-        <!-- {{ filter.form.duration.label_tag }} -->
-        {% render_field filter.form.duration class="form-control" %}
+        <p>By maximum cost (in GBP): </p>
+        {% render_field filter.form.cost class="form-control" %}
       </div>
     </div>
     <button type="submit" class="btn btn-primary">

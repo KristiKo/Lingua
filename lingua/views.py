@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from lingua.forms import ContactForm, SubscriberForm
 from django.core.mail import send_mail, BadHeaderError
 from .models import University, Programme, Course
-from .filters import UniversityFilter, ProgrammeFilter, CourseFilter
+from .filters import ProgrammeFilter, CourseFilter
 import datetime
 
 def index(request):
