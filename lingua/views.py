@@ -5,20 +5,58 @@ from lingua.forms import ContactForm, SubscriberForm
 from django.core.mail import send_mail, BadHeaderError
 from .models import University, Programme, Course
 from .filters import ProgrammeFilter, CourseFilter
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import datetime
+from . import filters
+
 
 def index(request):
     return render(request, 'lingua_templates/home.html')
 
 def search_programme(request):
-    programme_list = Programme.objects.all()
-    programme_filter = ProgrammeFilter(request.GET, queryset=programme_list)
-    return render(request, 'lingua_templates/search/search_form_programme.html', {'filter': programme_filter})
+    programs_list = Programme.objects.all()
+    programs_filter = ProgrammeFilter(request.GET, queryset=programs_list)
+    filtered_qs = filters.ProgrammeFilter(
+                      request.GET, 
+                      queryset=Programme.objects.all()
+                  ).qs
+    paginator = Paginator(filtered_qs, 20)
+
+    page = request.GET.get('page')
+    try:
+        programs = paginator.page(page)
+    except PageNotAnInteger:
+        programs = paginator.page(1)
+    except EmptyPage:
+        programs = paginator.page(paginator.num_pages)
+
+    return render(
+        request, 
+        'lingua_templates/search/search_form_programme.html', 
+        {'programs': programs, 'filter': programs_filter}
+    )
 
 def search_course(request):
     course_list = Course.objects.all()
     course_filter = CourseFilter(request.GET, queryset=course_list)
-    return render(request, 'lingua_templates/search/search_form_course.html', {'filter': course_filter})
+    filtered_qs = filters.CourseFilter(
+                    request.GET,
+                    queryset = Course.objects.all()
+                ).qs
+    paginator = Paginator(filtered_qs, 20)
+    page = request.GET.get('page')
+    try:
+        courses = paginator.page(page)
+    except PageNotAnInteger:
+        courses = paginator.page(1)
+    except EmptyPage:
+        courses = paginator.page(paginator.num_pages)
+
+    return render(
+        request, 
+        'lingua_templates/search/search_form_course.html', 
+        {'courses':courses, 'filter': course_filter}
+    )
 
 def subscribe(request):
     score = 0
