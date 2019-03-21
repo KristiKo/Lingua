@@ -5,10 +5,10 @@ import django_filters
 class ProgrammeFilter(django_filters.FilterSet):
     university = django_filters.ModelChoiceFilter(queryset=University.objects.all())
     name = django_filters.CharFilter(field_name='name', lookup_expr='icontains')
-    city = django_filters.ModelChoiceFilter(queryset=University.objects.all().values_list('city', flat=True))
+    city = django_filters.CharFilter(field_name='city', lookup_expr='icontains')
     award = django_filters.CharFilter(field_name='award', lookup_expr='icontains')
-    max_cost = django_filters.NumberFilter(field_name='original_cost', lookup_expr='lt')
-    min_cost = django_filters.NumberFilter(field_name='original_cost', lookup_expr='gt')
+    max_cost = django_filters.NumberFilter(field_name='original_cost', lookup_expr='lte')
+    min_cost = django_filters.NumberFilter(field_name='original_cost', lookup_expr='gte')
 
     class Meta:
         model = Programme
@@ -18,9 +18,9 @@ class ProgrammeFilter(django_filters.FilterSet):
 class CourseFilter(django_filters.FilterSet):
     college = django_filters.ModelChoiceFilter(queryset=College.objects.all())
     name = django_filters.CharFilter(field_name='name', lookup_expr='icontains')
-    city = django_filters.ModelChoiceFilter(queryset=College.objects.all().values_list('city', flat=True))
-    max_cost = django_filters.NumberFilter(field_name='original_cost1', lookup_expr='lt')
-    min_cost = django_filters.NumberFilter(field_name='original_cost1', lookup_expr='gt')
+    city = django_filters.CharFilter(field_name='city', lookup_expr='icontains')
+    max_cost = django_filters.NumberFilter(field_name='original_cost1', lookup_expr='lte')
+    min_cost = django_filters.NumberFilter(field_name='original_cost1', lookup_expr='gte')
     housing = django_filters.BooleanFilter()
     
 

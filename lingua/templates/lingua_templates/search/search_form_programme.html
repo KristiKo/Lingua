@@ -95,5 +95,30 @@
   <h1>Sorry, we could not find what you were looking for</h1>
   <h4>Try with a more general search or <a style="text-decoration:none;" href="#">contact us</a></h4>
 {% endfor %}
+
+<!-- Pagination -->
+{% if programs.has_other_pages %}
+  <ul class="pagination" style="padding:0 3rem;">
+    {% if programs.has_previous %}
+      <li><a href="?page={{ programs.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in programs.paginator.page_range %}
+      {% if programs.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if programs.has_next %}
+      <li><a href="?page={{ programs.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+
+
 {% include "lingua_templates/inc/footer.html" %}
 {% endblock %}
