@@ -657,6 +657,13 @@ a:hover,a:focus{
 .privacy p {
     text-align: left;
 }
+@media only screen and (max-width: 787px){
+    .faqs-container{
+        padding: 0rem;
+        width: 18rem;
+        margin: 0 1rem;
+    }
+}
 /* Partners */
 .slick-slide {
     margin: 0px 20px;
