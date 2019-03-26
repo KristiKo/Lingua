@@ -34,14 +34,19 @@
             <div role="tabpanel" class="tab-pane fade" id="Section2">
                 <h3>Cost</h3>
                 <p>This programme costs: </p>
+                {% if programme.discount_cost %}
                 <div class="row">
                     <p class="original-cost m-2">£ {{ programme.original_cost }} </p>
                     <p class="m-2"> - if you join directly with {{ programme.university }}</p>
                 </div>
-                {% if programme.discount_cost %}
                 <div class="row">
                     <p class="discount-cost m-2">£ {{ programme.discount_cost }}</p>
                     <p class="m-2"> - if you join with us.</p>
+                </div>
+                {% else %}
+                <div class="row">
+                    <p class="discount-cost m-2">£ {{ programme.original_cost }} </p>
+                    <p class="m-2"> - if you join directly with {{ programme.university }}</p>
                 </div>
                 {% endif %}
             </div>
