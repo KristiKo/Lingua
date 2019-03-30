@@ -9,7 +9,7 @@
 </div>
 
 <img class="single-image" src="{{ course.image.url }}" alt="">
-<h1>{{ course.name }}</h1>
+<h3>{{ course.name }}</h3>
 <div class="single-programme">
     <div class="tab" role="tabpanel">
         <ul class="nav nav-tabs" role="tablist">
@@ -22,8 +22,7 @@
             <div role="tabpanel" class="tab-pane fade in active show" id="Section1">
                 <h3>Description</h3>
                 <div class="row">
-                    <p><i class="fas fa-birthday-cake lingua-icon-dark-small"></i>You should be at least {{
-                        course.min_age }} years old</p>
+                    <p><i class="fas fa-birthday-cake lingua-icon-dark-small"></i>You should be at least {{ course.min_age }} years old</p>
                     <p><i class="fas fa-users lingua-icon-dark-small"></i>{{ course.student_per_class }} students per
                         class</p>
                     <p><i class="far fa-clock lingua-icon-dark-small"></i>Lesson {{ course.lesson_durations }} minutes</p>
@@ -135,7 +134,7 @@
 
 <div id="mapid"></div>
 
-{% include "lingua_templates/testimonials/single_testimonial_course.html" %}
+<!-- {% include "lingua_templates/testimonials/single_testimonial_course.html" %} -->
 
 <div class="search-flex">
     <div>

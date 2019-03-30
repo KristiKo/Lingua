@@ -516,6 +516,14 @@ ul > a:hover {
 .single-programme p{
     text-align: left;
 }
+@media only screen and (max-width: 768px){
+    .single-programme{
+        padding: 2rem;
+    }
+    .container{
+        padding: 0 !important;
+    }
+}
 a:hover,a:focus{
     outline: none;
     text-decoration: none;
@@ -557,7 +565,7 @@ a:hover,a:focus{
         width: 100%;
         text-align: center;
     }
-    .tab .nav-tabs li.active a:before{
+    .tab .nav-tabs li.active {
         content: "\f105";
         bottom: 15%;
         left: 0;
