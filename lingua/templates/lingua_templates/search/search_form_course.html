@@ -10,7 +10,7 @@
   <div class="well">
     <h1>Find a course:</h1>
     <h1 style="color:grey;">{{ filter.qs.count }}</h1>
-    <div class="row" style="padding-left:3rem;">
+    <div class="row">
       <div class="form-group col-sm-4 col-md-3">
         <p>By college</p>
         {% render_field filter.form.college class="form-control" %}
@@ -31,10 +31,10 @@
         <p>Max cost (in GBP): </p>
         {% render_field filter.form.max_cost class="form-control" %}
       </div>
-      <div class="form-group form-sm col-sm-4 col-md-3">
+<!--       <div class="form-group form-sm col-sm-4 col-md-3">
         <p>Housing included: </p>
         {% render_field filter.form.housing class="form-control" %}
-      </div>
+      </div> -->
     </div>
     <button type="submit" class="btn btn-primary">
       <span class="glyphicon glyphicon-search"></span> Search
