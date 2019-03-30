@@ -214,6 +214,9 @@ ul > a:hover {
     height: 10rem;
     padding: 2rem;
 }
+.lingua-cost{
+    width: 51%;
+}
 @media screen and (max-width: 768px) {
     #search-form-programme, #search-form-course{
         width: 100%;
@@ -229,6 +232,9 @@ ul > a:hover {
     }
     .lingua-image{
         width: 90%;
+    }
+    .lingua-cost{
+        width: auto;
     }
 }
 .original-cost{
