@@ -22,6 +22,7 @@ urlpatterns = [
                                         template_name = 'lingua_templates/single_course.html')),
     url(r'^search_course/(?P<pk>\d+)/$', DetailView.as_view(model=CourseTestimonial,
                                         template_name = 'lingua_templates/testimonials/single_testimonial_course.html')),
+    url(r'^about/$', views.about, name="about"),
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^thank-you-for-reaching-us/$', views.thanks, name='thanks'),
 ]

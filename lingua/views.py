@@ -74,6 +74,9 @@ def subscribe(request):
             return redirect('index')
     return render(request, "lingua_templates/subscribe.html", {'form':form}) 
 
+def about(request):
+    return render(request, 'lingua_templates/about.html')
+
 def contact(request):
     if request.method == 'GET':
         form = ContactForm()
