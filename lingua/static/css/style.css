@@ -559,28 +559,29 @@ ul > a:hover {
   }
 /* Center container */
 .lingua-center{
-    padding: 2rem;
+    margin: 4rem auto;
+    width: 80%;
 }
-.img-fluid{
+.lingua-fluid{
+    display: block;
+    margin: 0 auto;
     border-radius: 5px;
-    box-shadow: 0 6px 15px 0 rgba( 85, 92, 107, .15 );
+    max-width: 70%;
+    -webkit-box-shadow: -2px 2px 21px 0px rgba(133,133,133,1);
+    -moz-box-shadow: -2px 2px 21px 0px rgba(133,133,133,1);
+    box-shadow: -2px 2px 21px 0px rgba(133,133,133,1);
 }
-.overlap-left, .overlap-right{
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 6px 15px 0 rgba( 85, 92, 107, .15 );
+.reduced{
+    max-width: 60%;
 }
-.overlap-left{
-    margin: 2rem -10rem;
+.lingua-text-center p {
+    text-align: left;
 }
-.overlap-right{
-    margin: 2rem -5rem 2rem 5rem;
-    z-index: 99;
-    max-width: 30%;
-}
-@media screen and (max-width:1000px){
-    .overlap-left, .overlap-right{
-        margin: 0;
+@media only screen and (max-width: 1024px){
+    .lingua-center{
+        width: 100%;
+    }
+    .lingua-fluid, .reduced{
         max-width: 100%;
     }
 }
@@ -1581,8 +1582,6 @@ a:focus,a:hover,a{
     #wrapper.toggled-2 #sidebar-wrapper:hover {
         width: 250px;
     }
- 
- 
     #page-content-wrapper {
         padding: 20px;
         position: relative;

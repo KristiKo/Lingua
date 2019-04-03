@@ -1,71 +1,57 @@
 {% load staticfiles %}
-<section class="my-5">
-      <div class="row lingua-center linguaFade">
-        <div class="col-lg-5">
-        <div class="overlay rounded z-depth-2 mb-lg-0 mb-4">
-          <img class="img-fluid" src="{%static 'assets/cambridge.jpg' %}" alt="university application" title="visa uk">
-          <a>
-            <div class="mask rgba-white-slight"></div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-6 overlap-left">
-        <h2 class="font-weight-bold mb-3"><strong>How we work</strong></h2>
-        <p><i class="fas fa-search lingua-icon-dark"></i>Search your favourite university programme or language course.</br>
-          Register, upload the required document, sit back and relax. <i class="fas fa-file-upload lingua-icon-dark"></i></br>
-          <i class="fas fa-cogs lingua-icon-dark"></i>Forget the paperwork and waiting for approval. We do the rest for you.</p>
-      </div>
+<section>
+  <div class="row lingua-center">
+    <div class="col-lg-8 reduced"><img class="lingua-fluid" src="{%static 'assets/cambridge.jpg' %}" alt="university application"
+        title="visa uk"></div>
+    <div class="col-lg-4 lingua-text-center">
+      <h2 class="font-weight-bold mb-3"><strong>Our mission</strong></h2>
+      <br>
+      <p>Lingua International was created by students for students.
+        We combine all our knowledge to make it as easy, cheap and quick as possible for you to apply to hundreds of university programs and language courses in the UK.
+      </p>
     </div>
-    <div class="row lingua-center linguaFade">
-      <div class="col-lg-6 overlap-right">
-        <h2 class="font-weight-bold mb-3"><strong>Easy Application</strong></h2>
-        <p>To <a href="{% url 'how_to_apply' %}">apply</a> has never been easier and you get a response within 24h.</p>
-            <p>Applying through us will save you from 5% to 30% ot the total cost of the programme.</p>
-            <p>We will never ask you money. </p><i class="fas fa-piggy-bank lingua-icon-dark"style="display:block;margin:0 auto;"></i></br>
-            <p>We provide assistance every step of the way: helping you to find the right course, to get scholarship, visa and arraging accommodation.</p>
-      </div>
-      <div class="col-lg-5">
-        <div class="overlay rounded z-depth-2">
-          <img class="img-fluid" src="{%static 'assets/library.jpg' %}" alt="University library" title="easy apply university">
-          <a>
-            <div class="mask rgba-white-slight"></div>
-          </a>
-        </div>  
-      </div>
+  </div>
+
+  <div class="row lingua-center">
+    <div class="col-lg-4 lingua-text-center">
+      <h2 class="font-weight-bold mb-3"><strong>How We Work</strong></h2>
+      <br>
+      <p>To <a href="{% url 'how_to_apply' %}">apply</a> with us is 100% free!
+      We will never ask you for money.
+      Thanks to our arrangements with universities and language schools, you can save up to 30% of the programme or course total cost.
+      Applying is as simple as registering and uploading the required document. You can do it from your phone or pick up where you left off.
+      Once the application is submitted you will get a response within 24h.</p>
     </div>
-    <div class="row lingua-center linguaFade">
-      <div class="col-lg-5">
-        <div class="overlay rounded z-depth-2 mb-lg-0 mb-4">
-          <img class="img-fluid" src="{%static 'assets/students.jpg' %}" alt="service" title="discount uk university">
-          <a>
-            <div class="mask rgba-white-slight"></div>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-6 overlap-left">
-        <h2 class="font-weight-bold mb-3"><strong>Amazing Service</strong></h2>
-        <p>You can contact us 24h the way you prefer. </br>
-          <i class="fa fa-clock lingua-icon-dark"style="display:block;margin:0 auto;"></i>
-            Our primary focus is to make your experience the best possible.</br>
-            We speak English, Russian, German, Italian, Polish, Swedish, Ukrainian.</p>
-            <i class="fas fa-language lingua-icon-dark" style="display:block;margin:0 auto;"></i>
-      </div>
+    <div class="col-lg-8 reduced"><img class="lingua-fluid" src="{%static 'assets/library.jpg' %}" alt="University library"
+      title="easy university application"></div>
+  </div>
+
+  <div class="row lingua-center">
+    <div class="col-lg-8 reduced"><img class="lingua-fluid" src="{%static 'assets/students.jpg' %}" alt="discount uk university"
+        title="english language course"></div>
+    <div class="col-lg-4 lingua-text-center">
+      <h2 class="font-weight-bold mb-3"><strong>Why Us</strong></h2>
+      <br>
+      <p>As previous students ourselves, we know how daunting the application process can be.
+        That's why we do all the paperwork for you, so you don't have to worry about a thing.
+        You can reach us 24/7. We speak English, Russian, Polish, Italian, German and Ukrainian.
+      </p>
     </div>
-    <div class="row lingua-center linguaFade">
-        <div class="col-lg-6 overlap-right">
-          <h2 class="font-weight-bold mb-3"><strong>We take security seriously</strong></h2>
-          <p>Your personal details are always encrypted and never shared with third parties.  We are a fully regulated business registered in the UK.</p>
-          <div style="text-align: center;">
-            <i class="fas fa-shield-alt lingua-icon-dark"style="display:inline-block;margin:0 auto;"></i><i class="fas fa-database lingua-icon-dark"style="display:inline-block;margin:0 auto;"></i>
-          </div>
-        </div>
-        <div class="col-lg-5">
-          <div class="overlay rounded z-depth-2">
-            <img class="img-fluid" src="{%static 'assets/study.jpg' %}" alt="security" title="privacy and security">
-            <a>
-              <div class="mask rgba-white-slight"></div>
-            </a>
-          </div>  
-        </div>
-      </div>
-  </section>
+  </div>
+
+  <div class="row lingua-center">
+    <div class="col-lg-4 lingua-text-center">
+      <h2 class="font-weight-bold mb-3"><strong>We take security seriously</strong></h2>
+      <br>
+      <p>Your personal details are always encrypted and never shared with third parties. We are a fully regulated business registered in the UK.</p>
+    </div>
+    <div class="col-lg-8 reduced"><img class="lingua-fluid" src="{%static 'assets/study.jpg' %}" alt="security"
+      title="privacy and security"></div>
+  </div>
+</section>
+
+<!-- <i class="fas fa-search lingua-icon-dark"></i>
+<i class="fas fa-file-upload lingua-icon-dark"></i>
+<i class="fas fa-cogs lingua-icon-dark"></i>
+<i class="fas fa-piggy-bank lingua-icon-dark"style="display:block;margin:0 auto;"></i>
+ <i class="fa fa-clock lingua-icon-dark"style="display:block;margin:0 auto;"></i> -->
