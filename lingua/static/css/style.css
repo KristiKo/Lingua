@@ -166,6 +166,29 @@ label, legend{
 .lingua-icon-testimonial{
     color: gold;
 }
+/* Hero section */
+#lingua-hero {
+    background-color: #00b2ff; /* #00b2ff */
+    padding: 4rem;
+}
+#lingua-hero p, #lingua-hero h1 {
+    color: #f8f9fa;
+}
+.hero-text{
+    padding: 4rem;
+}
+.icon {
+font-size: 200%;	
+border-radius: 0.5em;
+padding:0.5em;
+}
+@media screen and (max-width: 768px) {
+    .hero-text{padding: 0;}
+    .lingua-rotate{
+        max-width: 80%;
+    }
+}
+
 /* Search Form */
 .search-flex{
     display: flex;

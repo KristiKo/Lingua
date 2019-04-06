@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from django.urls import path
 from django.conf.urls import url, include
 from django.views.generic import ListView, DetailView
@@ -25,4 +26,5 @@ urlpatterns = [
     url(r'^about/$', views.about, name="about"),
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^thank-you-for-reaching-us/$', views.thanks, name='thanks'),
+    url(r'^robots.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: ", content_type="text/plain"))
 ]
