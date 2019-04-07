@@ -169,10 +169,12 @@ label, legend{
 /* Hero section */
 #lingua-hero {
     background-color: #00b2ff; /* #00b2ff */
-    padding: 4rem;
 }
 #lingua-hero p, #lingua-hero h1 {
     color: #f8f9fa;
+}
+.subtitle{
+    color: white;
 }
 .hero-text{
     padding: 4rem;
@@ -187,14 +189,17 @@ padding:0.5em;
     .lingua-rotate{
         max-width: 80%;
     }
+    .display-3{
+        font-size: 3.5rem;
+    }
 }
-
 /* Search Form */
 .search-flex{
     display: flex;
     margin: 7rem auto;
     width: 60%;
     justify-content: space-between;
+    margin-top: 0;
 }
 .form-flex{
     display: flex;
