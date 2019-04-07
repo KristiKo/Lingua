@@ -168,10 +168,16 @@ label, legend{
 }
 /* Hero section */
 #lingua-hero {
-    background-color: #00b2ff; /* #00b2ff */
+    /* background-color: #00b2ff; */
+    background-image: url('https://cdn.pixabay.com/photo/2018/02/10/20/42/building-3144512_960_720.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #lingua-hero p, #lingua-hero h1 {
     color: #f8f9fa;
+}
+.lingua-overlay{
+    background-color: rgba(0,0,0, 0.3);
 }
 .subtitle{
     color: white;
@@ -185,6 +191,9 @@ border-radius: 0.5em;
 padding:0.5em;
 }
 @media screen and (max-width: 768px) {
+    #lingua-hero{
+        background-position: center;
+    }
     .hero-text{padding: 0;}
     .lingua-rotate{
         max-width: 80%;
