@@ -295,17 +295,21 @@ ul > a:hover {
 .lingua-apply{
     max-width: 30%;
 }
+.lingua-cta{
+    padding: 3rem;
+    background-color: #f8f9fa;
+    margin-top: 1rem;
+}
 .lingua-icons{
     width: 70%;
     margin: 0 auto;
 }
-.apply-img-left{
+.apply-img-left, .apply-img-right{
     width: 50%;
     margin-left: 16rem;
-}
-.apply-img-right{
-    width: 50%;
-    margin-right: 16rem;
+    -webkit-box-shadow: -2px 2px 21px 0px rgba(133,133,133,1);
+    -moz-box-shadow: -2px 2px 21px 0px rgba(133,133,133,1);
+    box-shadow: -2px 2px 21px 0px rgba(133,133,133,1);
 }
 .apply-desc{
     display: block;
@@ -325,7 +329,6 @@ ul > a:hover {
   
   .mdl-stepper-horizontal-alternative .mdl-stepper-step {
     width: 25%;
-    /* 100 / no_of_steps */
   }  
   .mdl-stepper-horizontal-alternative {
     display: table;
@@ -809,6 +812,9 @@ a:hover,a:focus{
     }
 }
 /* Partners */
+.lingua-partners{
+    padding:4rem 0;
+}
 .slick-slide {
     margin: 0px 20px;
 }
@@ -1145,18 +1151,6 @@ figure.snip1139 .author h5 span {
         width: 65%;
         margin: 1rem;
     }
-}
-/* Subscribe Newsletter */
-.subscribe{
-    display: block;
-    width: 80%;
-    margin: 4rem auto;
-    padding: 4rem;
-    background-color: white !important;
-}
-.subscribe input{
-    display: block;
-    margin: 1rem auto;
 }
 /* Footer */
 #myFooter {

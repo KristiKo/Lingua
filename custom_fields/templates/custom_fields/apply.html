@@ -2,8 +2,6 @@
 {% load staticfiles %}
 {% block content %}
 {% include "lingua_templates/inc/navbar.html" %}
-
-
 <section class="text-center my-5">
   <h1 class="h1-responsive font-weight-bold my-5">How to apply</h1>
   <div class="row" style="justify-content:space-evenly;">
@@ -188,18 +186,12 @@
       <img class="apply-img-right" src="{%static 'assets/apply_demo.png' %}" alt="Lingua Apply image" class="img-fluid rounded z-depth-1">
     </div>
   </div>
-  <div style="background-color: #f8f9fa !important;" class="bg bg-light apply cta linguaFade">
+  <div class="bg bg-light lingua-cta linguaFade">
     <h1>Ready to apply?</h1>
     <p> Start by creating your student profile.</br>
         Forget about the paperwork and get ready for your life adventure...</p>
     <a href="{% url 'register' %}" class="btn btn-primary">Register</a>
 </div>
 </section>
-
-<!-- {% if fields %}
-    {% for field in fields %}
-        {{ field.content }}
-    {% endfor %}
-{% endif %} -->
 {% include "lingua_templates/inc/footer.html" %}
 {% endblock %}

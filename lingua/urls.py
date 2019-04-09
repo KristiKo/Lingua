@@ -8,7 +8,6 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^subscribe/$', views.subscribe, name='subscribe'),
     url(r'^search_programme/$', views.search_programme, name='search_programme'),
     url(r'^search_programme/$', ListView.as_view(queryset=Programme.objects.all()[:25],
                                         template_name="lingua_templates/home.html")),
@@ -23,7 +22,6 @@ urlpatterns = [
                                         template_name = 'lingua_templates/single_course.html')),
     url(r'^search_course/(?P<pk>\d+)/$', DetailView.as_view(model=CourseTestimonial,
                                         template_name = 'lingua_templates/testimonials/single_testimonial_course.html')),
-    url(r'^about/$', views.about, name="about"),
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^thank-you-for-reaching-us/$', views.thanks, name='thanks'),
     url(r'^robots.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: ", content_type="text/plain"))
