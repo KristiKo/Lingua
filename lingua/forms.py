@@ -1,5 +1,4 @@
 from django import forms
-from users.models import Subscriber
 
 class ContactForm(forms.Form):
     DAYS = (
@@ -38,13 +37,3 @@ class ContactForm(forms.Form):
     day = forms.ChoiceField(choices=DAYS, label="Day")
     time = forms.ChoiceField(choices=TIMES, label="Time")
     message = forms.CharField(widget=forms.Textarea, label="Your Message")
-
-class SubscriberForm(forms.ModelForm):
-    email = forms.EmailField(required=False, label="Email Address",
-            widget=forms.TextInput(attrs={'placeholder': 'Email Address'}))
-    question = forms.CharField(required=False, label="Plural of tooth",
-            widget=forms.TextInput(attrs={'placeholder': 'answer here'}))
-    
-    class Meta:
-        model = Subscriber
-        fields = ['email']
