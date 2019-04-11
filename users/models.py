@@ -26,6 +26,7 @@ class Profile(models.Model):
     recommendation1 = models.FileField(null=True, upload_to='recommendations')
     recommendation2 = models.FileField(null=True, upload_to='recommendations')
     recommendation3 = models.FileField(null=True, upload_to='recommendations')
+    promo = models.CharField(null=True, max_length=140)
     agreement = models.BooleanField(default=False)
 
 

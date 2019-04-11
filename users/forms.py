@@ -40,8 +40,9 @@ class ProfileUpdateForm(forms.ModelForm):
     recommendation1 = forms.FileField(required=False)
     recommendation2 = forms.FileField(required=False)
     recommendation3 = forms.FileField(required=False)
+    promo_code = forms.CharField(required=False)
     agree = forms.BooleanField(required=False)
 
     class Meta:
         model = Profile
-        fields = ['image','name','surname','email','phone','street_address','city', 'zip_code', 'passport','visa','cas', 'recent_education', 'university_preference','course_preference','english_level','motivation_letter','cv','recommendation1','recommendation2','recommendation3', 'agree']
+        fields = ['image','name','surname','email','phone','street_address','city', 'zip_code', 'passport','visa','cas', 'recent_education', 'university_preference','course_preference','english_level','motivation_letter','cv','recommendation1','recommendation2','recommendation3', 'promo_code', 'agree']
