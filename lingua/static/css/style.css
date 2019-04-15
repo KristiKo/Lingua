@@ -268,7 +268,8 @@ ul > a:hover {
         display: block;
     }
     .lingua-image{
-        width: 90%;
+        width: 100%;
+        padding: 0;
     }
     .lingua-cost{
         width: auto;
@@ -799,7 +800,8 @@ a:hover,a:focus{
   transition: all 0.35s ease 0.15s;
 }
 .privacy{
-    padding: 6rem;
+    width: 80%;
+    padding: 2rem !important
 }
 .privacy p {
     text-align: left;
