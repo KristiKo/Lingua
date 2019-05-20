@@ -17,7 +17,7 @@
       </div>
       <div class="form-group col-sm-4 col-md-3">
         <p>By city</p>
-        {% render_field filter.form.city class="form-control" %}
+        {% render_field filter.form.college__city class="form-control" %}
       </div>
       <div class="form-group col-sm-4 col-md-3">
         <p>By name: </p>
@@ -31,7 +31,7 @@
         <p>Max cost (in GBP): </p>
         {% render_field filter.form.max_cost class="form-control" %}
       </div>
-<!--       <div class="form-group form-sm col-sm-4 col-md-3">
+      <!--       <div class="form-group form-sm col-sm-4 col-md-3">
         <p>Housing included: </p>
         {% render_field filter.form.housing class="form-control" %}
       </div> -->
@@ -44,76 +44,76 @@
 
 <!-- Pagination -->
 {% if courses.has_other_pages %}
-  <ul class="pagination" style="padding:0 3rem;">
-    {% if courses.has_previous %}
-      <li><a href="?page={{ courses.previous_page_number }}">&laquo;</a></li>
-    {% else %}
-      <li class="disabled"><span>&laquo;</span></li>
-    {% endif %}
-    {% for i in courses.paginator.page_range %}
-      {% if courses.number == i %}
-        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
-      {% else %}
-        <li><a href="?page={{ i }}">{{ i }}</a></li>
-      {% endif %}
-    {% endfor %}
-    {% if courses.has_next %}
-      <li><a href="?page={{ courses.next_page_number }}">&raquo;</a></li>
-    {% else %}
-      <li class="disabled"><span>&raquo;</span></li>
-    {% endif %}
-  </ul>
+<ul class="pagination" style="padding:0 3rem;">
+  {% if courses.has_previous %}
+  <li><a href="?page={{ courses.previous_page_number }}">&laquo;</a></li>
+  {% else %}
+  <li class="disabled"><span>&laquo;</span></li>
+  {% endif %}
+  {% for i in courses.paginator.page_range %}
+  {% if courses.number == i %}
+  <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+  {% else %}
+  <li><a href="?page={{ i }}">{{ i }}</a></li>
+  {% endif %}
+  {% endfor %}
+  {% if courses.has_next %}
+  <li><a href="?page={{ courses.next_page_number }}">&raquo;</a></li>
+  {% else %}
+  <li class="disabled"><span>&raquo;</span></li>
+  {% endif %}
+</ul>
 {% endif %}
 
 <!-- Courses List -->
 {% for course in courses %}
-  <a href="{{ course.id }}" class="card-result">
-    <div class="search-result">
-      <div class="lingua-card">
-        <img src="{{ course.image.url }}" alt="english language course" class="lingua-image">
-        <div class="lingua-info">
-          <h2>{{ course.name }}</h2>
-          <h5>{{ course.college }}, {{ course.college.city }}</h5>
-          <hr>
-          <p>From {{ course.min_age }} years old</p>
-        </div>
-        <div class="lingua-cost">
-          {% if course.discount_cost1 %}
-            <p class="card-price discount-cost" style="padding:2rem;"> £ {{ course.discount_cost1 }}</p>
-            <p class="card-price original-cost">£ {{ course.original_cost1 }}</p>
-          {% else %}
-          <p class="card-price discount-cost" style="padding:2rem;"> £ {{ course.original_cost1 }}</p>
-          {% endif %}
-        </div>
+<a href="{{ course.id }}" class="card-result">
+  <div class="search-result">
+    <div class="lingua-card">
+      <img src="{{ course.image.url }}" alt="english language course" class="lingua-image">
+      <div class="lingua-info">
+        <h2>{{ course.name }}</h2>
+        <h5>{{ course.college }}, {{ course.college.city }}</h5>
+        <hr>
+        <p>From {{ course.min_age }} years old</p>
+      </div>
+      <div class="lingua-cost">
+        {% if course.discount_cost1 %}
+        <p class="card-price discount-cost" style="padding:2rem;"> £ {{ course.discount_cost1 }}</p>
+        <p class="card-price original-cost">£ {{ course.original_cost1 }}</p>
+        {% else %}
+        <p class="card-price discount-cost" style="padding:2rem;"> £ {{ course.original_cost1 }}</p>
+        {% endif %}
       </div>
     </div>
-  </a>
-  {% empty %}
-  <h1>Sorry, we could not find what you were looking for</h1>
-  <h4>Try with a more general search or <a style="text-decoration:none;" href="#">contact us</a></h4>
+  </div>
+</a>
+{% empty %}
+<h1>Sorry, we could not find what you were looking for</h1>
+<h4>Try with a more general search or <a style="text-decoration:none;" href="#">contact us</a></h4>
 {% endfor %}
 
 <!-- Pagination -->
 {% if courses.has_other_pages %}
-  <ul class="pagination" style="padding:0 3rem;">
-    {% if courses.has_previous %}
-      <li><a href="?page={{ courses.previous_page_number }}">&laquo;</a></li>
-    {% else %}
-      <li class="disabled"><span>&laquo;</span></li>
-    {% endif %}
-    {% for i in courses.paginator.page_range %}
-      {% if courses.number == i %}
-        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
-      {% else %}
-        <li><a href="?page={{ i }}">{{ i }}</a></li>
-      {% endif %}
-    {% endfor %}
-    {% if courses.has_next %}
-      <li><a href="?page={{ courses.next_page_number }}">&raquo;</a></li>
-    {% else %}
-      <li class="disabled"><span>&raquo;</span></li>
-    {% endif %}
-  </ul>
+<ul class="pagination" style="padding:0 3rem;">
+  {% if courses.has_previous %}
+  <li><a href="?page={{ courses.previous_page_number }}">&laquo;</a></li>
+  {% else %}
+  <li class="disabled"><span>&laquo;</span></li>
+  {% endif %}
+  {% for i in courses.paginator.page_range %}
+  {% if courses.number == i %}
+  <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+  {% else %}
+  <li><a href="?page={{ i }}">{{ i }}</a></li>
+  {% endif %}
+  {% endfor %}
+  {% if courses.has_next %}
+  <li><a href="?page={{ courses.next_page_number }}">&raquo;</a></li>
+  {% else %}
+  <li class="disabled"><span>&raquo;</span></li>
+  {% endif %}
+</ul>
 {% endif %}
 
 {% include "lingua_templates/inc/footer.html" %}
