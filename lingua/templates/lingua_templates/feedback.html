@@ -1,0 +1,17 @@
+{% extends "lingua_templates/header.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% include "lingua_templates/inc/navbar.html" %}
+<h1>Customer Service Survey</h1>
+<h2>Please take a moment to fill out this survey and help us to improve</h2>
+<form class="contact-form" method="post">
+      {% load widget_tweaks %}
+      {% csrf_token %}
+      {{ form|crispy }}
+      <div class="form-actions">
+        <button type="submit" class="btn btn-info">Leave Feedback</button>
+      </div>
+    </form>
+{% include "lingua_templates/inc/footer.html" %}
+{% endblock %}

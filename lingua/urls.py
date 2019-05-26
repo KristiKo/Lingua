@@ -23,6 +23,8 @@ urlpatterns = [
     url(r'^search_course/(?P<pk>\d+)/$', DetailView.as_view(model=CourseTestimonial,
                                         template_name = 'lingua_templates/testimonials/single_testimonial_course.html')),
     url(r'^contact/$', views.contact, name='contact'),
+    url(r'^feedback/$', views.feedback, name='feedback'),
     url(r'^thank-you-for-reaching-us/$', views.thanks, name='thanks'),
     url(r'^robots.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: ", content_type="text/plain"))
+    
 ]

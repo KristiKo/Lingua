@@ -37,3 +37,45 @@ class ContactForm(forms.Form):
     day = forms.ChoiceField(choices=DAYS, label="Day")
     time = forms.ChoiceField(choices=TIMES, label="Time")
     message = forms.CharField(widget=forms.Textarea, label="Your Message")
+
+
+class FeedbackForm(forms.Form):
+    
+    FRIENDLINESS = (
+        (" ", " "),
+        ("Very satisfied", "Very satisfied"),
+        ("Satisfied", "Satisfied"),
+        ("Neutral", "Neutral"),
+        ("Unsatisfied", "Unsatisfied"),
+        ("Very unsatisfied", "Very unsatisfied"),
+    )
+    KNOWLEDGE = (
+        (" ", " "),
+        ("Very satisfied", "Very satisfied"),
+        ("Satisfied", "Satisfied"),
+        ("Neutral", "Neutral"),
+        ("Unsatisfied", "Unsatisfied"),
+        ("Very unsatisfied", "Very unsatisfied"),
+
+    )
+    QUICKNESS = (
+        (" ", " "),
+        ("Very satisfied", "Very satisfied"),
+        ("Satisfied", "Satisfied"),
+        ("Neutral", "Neutral"),
+        ("Unsatisfied", "Unsatisfied"),
+        ("Very unsatisfied", "Very unsatisfied"),
+    )
+    YESNOMAYBE = (
+        (" ", " "),
+        ("Yes", "Yes"),
+        ("No", "No"),
+        ("Maybe", "Maybe"),
+    )
+
+    Friendliness = forms.ChoiceField(choices=FRIENDLINESS, label="Friendliness")
+    Knowledge = forms.ChoiceField(choices=KNOWLEDGE, label="Knowledge")
+    Quickness = forms.ChoiceField(choices=QUICKNESS, label="Quickness")
+    YesNoMaybe = forms.ChoiceField(choices=YESNOMAYBE, label="Would you suggest Lingua International to a friend?")
+    message = forms.CharField(widget=forms.Textarea, required = False, label="How can we improve our service?")
+

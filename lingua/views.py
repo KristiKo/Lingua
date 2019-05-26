@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
-from lingua.forms import ContactForm
+from lingua.forms import ContactForm, FeedbackForm
 from django.core.mail import send_mail, BadHeaderError
 from .models import University, Programme, Course
 from .filters import ProgrammeFilter, CourseFilter
@@ -80,3 +80,24 @@ def contact(request):
 
 def thanks(request):
     return HttpResponse('Thank you for your message.')
+
+def feedback(request):
+    if request.method == 'GET':
+        form = FeedbackForm()
+    else:
+        form = FeedbackForm(request.POST)
+        if form.is_valid():            
+            Friendliness = form.cleaned_data['Friendliness']
+            Knowledge = form.cleaned_data['Knowledge']
+            Quickness = form.cleaned_data['Quickness']
+            YesNoMaybe = form.cleaned_data['YesNoMaybe']
+            message = form.cleaned_data['message']
+            message = 'Friendliness: ' + Friendliness + ' Knowledge: ' + Knowledge + ' Quickness: ' + Quickness + ' YesNoMaybe: ' + YesNoMaybe + ' Message: ' + message
+            from_email = 'krishashop@gmail.com'
+            subject = 'feedback'
+            try:
+                send_mail(subject, message, from_email, ['hello@linguainternational.org'], fail_silently=False)
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            return redirect('thanks')
+    return render(request, "lingua_templates/feedback.html", {'form': form})
